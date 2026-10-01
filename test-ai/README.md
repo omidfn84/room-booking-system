@@ -1,8 +1,6 @@
 # AI-Assistant Generated Test Suite (`test-ai/`)
 
-Deliverable 3, Task 3. This folder holds the test cases produced with an
-AI assistant, kept separate from the manually written suite in `test/` and the
-Randoop suite in `test/randoopTests/` so that each can be measured on its own.
+DeliThis folder holds the test cases produced with an AI assistant, kept separate from the manually written suite in test/ so that each can be measured on its own.
 
 ## Scope
 
