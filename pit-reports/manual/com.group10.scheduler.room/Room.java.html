@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Room.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.group10.scheduler.room;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Room {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private String roomId;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private int capacity;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private String building;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private String roomNumber;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private RoomStatus status;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final RoomSensorSystem sensorSystem;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public Room(String roomId, int capacity, String building, String roomNumber, RoomStatus status) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.roomId = roomId;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.capacity = capacity;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.building = building;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.roomNumber = roomNumber;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.status = status;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.sensorSystem = new RoomSensorSystem(roomId + &#34;-sensor&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void enable() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;status = RoomStatus.AVAILABLE;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void disable() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;status = RoomStatus.DISABLED;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void closeForMaintenance() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;status = RoomStatus.MAINTENANCE;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean isAvailable() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_36'/>
+36
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_36'>3</a>
+<span>
+1. isAvailable : replaced boolean return with true for com/group10/scheduler/room/Room::isAvailable &rarr; KILLED<br/>
+2. isAvailable : negated conditional &rarr; KILLED<br/>
+3. isAvailable : replaced boolean return with false for com/group10/scheduler/room/Room::isAvailable &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return (status == RoomStatus.AVAILABLE);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// Getter and setter methods</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String getRoomId() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_41'/>
+41
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_41'>1</a>
+<span>
+1. getRoomId : replaced return value with &#34;&#34; for com/group10/scheduler/room/Room::getRoomId &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return roomId;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void setRoomId(String roomId) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.roomId = roomId;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public int getCapacity() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_49'/>
+49
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_49'>1</a>
+<span>
+1. getCapacity : replaced int return with 0 for com/group10/scheduler/room/Room::getCapacity &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return capacity;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void setCapacity(int capacity) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.capacity = capacity;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String getBuilding() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_57'/>
+57
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_57'>1</a>
+<span>
+1. getBuilding : replaced return value with &#34;&#34; for com/group10/scheduler/room/Room::getBuilding &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return building;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void setBuilding(String building) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.building = building;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String getRoomNumber() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_65'/>
+65
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_65'>1</a>
+<span>
+1. getRoomNumber : replaced return value with &#34;&#34; for com/group10/scheduler/room/Room::getRoomNumber &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return roomNumber;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void setRoomNumber(String roomNumber) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.roomNumber = roomNumber;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public RoomStatus getStatus() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_72'/>
+72
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_72'>1</a>
+<span>
+1. getStatus : replaced return value with null for com/group10/scheduler/room/Room::getStatus &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;    return status;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void setStatus(RoomStatus status) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.status = status;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public RoomSensorSystem getSensorSystem() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_79'/>
+79
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_79'>1</a>
+<span>
+1. getSensorSystem : replaced return value with null for com/group10/scheduler/room/Room::getSensorSystem &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return sensorSystem;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String toString() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_83'/>
+83
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_83'>1</a>
+<span>
+1. toString : replaced return value with &#34;&#34; for com/group10/scheduler/room/Room::toString &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return &#34;Room[&#34; + roomId + &#34;] &#34; + building + &#34;-&#34; + roomNumber </span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            + &#34; | capacity=&#34; + capacity </span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            + &#34; | status=&#34; + status;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@122d6c22_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@122d6c22_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isAvailable<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.isAvailable_falseWhenStatusIsNotAvailable(com.group10.scheduler.room.RoomTest)</span></span> replaced boolean return with true for com/group10/scheduler/room/Room::isAvailable &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isAvailable<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.closeForMaintenance_setsStatusToMaintenance(com.group10.scheduler.room.RoomTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isAvailable<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.isAvailable_trueWhenStatusIsAvailable(com.group10.scheduler.room.RoomTest)</span></span> replaced boolean return with false for com/group10/scheduler/room/Room::isAvailable &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@122d6c22_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getRoomId<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.constructor_setsAllFieldsCorrectly(com.group10.scheduler.room.RoomTest)</span></span> replaced return value with &#34;&#34; for com/group10/scheduler/room/Room::getRoomId &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@122d6c22_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_49'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCapacity<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.constructor_setsAllFieldsCorrectly(com.group10.scheduler.room.RoomTest)</span></span> replaced int return with 0 for com/group10/scheduler/room/Room::getCapacity &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@122d6c22_57'>57</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_57'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getBuilding<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.constructor_setsAllFieldsCorrectly(com.group10.scheduler.room.RoomTest)</span></span> replaced return value with &#34;&#34; for com/group10/scheduler/room/Room::getBuilding &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@122d6c22_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_65'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getRoomNumber<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.constructor_setsAllFieldsCorrectly(com.group10.scheduler.room.RoomTest)</span></span> replaced return value with &#34;&#34; for com/group10/scheduler/room/Room::getRoomNumber &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@122d6c22_72'>72</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_72'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getStatus<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.disable_setsStatusToDisabled(com.group10.scheduler.room.RoomTest)</span></span> replaced return value with null for com/group10/scheduler/room/Room::getStatus &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@122d6c22_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_79'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getSensorSystem<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.constructor_createsASensorSystem(com.group10.scheduler.room.RoomTest)</span></span> replaced return value with null for com/group10/scheduler/room/Room::getSensorSystem &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@122d6c22_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@122d6c22_83'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>com.group10.scheduler.room.RoomTest.toString_containsKeyFields(com.group10.scheduler.room.RoomTest)</span></span> replaced return value with &#34;&#34; for com/group10/scheduler/room/Room::toString &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.group10.scheduler.room.RoomTest.constructor_setsAllFieldsCorrectly(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.room.RoomTest.setters_updateFieldsCorrectly(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.persistence.csv.CsvRoomRepositoryTest.saveThenLoad_roundTripsRoomDataCorrectly(com.group10.scheduler.persistence.csv.CsvRoomRepositoryTest) (0 ms)</li><li>com.group10.scheduler.persistence.csv.CsvRoomRepositoryTest.loadRooms_preservesMaintenanceAndOccupiedStatuses(com.group10.scheduler.persistence.csv.CsvRoomRepositoryTest) (1 ms)</li><li>com.group10.scheduler.persistence.csv.CsvRoomRepositoryTest.saveRooms_multipleRooms_allPersisted(com.group10.scheduler.persistence.csv.CsvRoomRepositoryTest) (1 ms)</li><li>com.group10.scheduler.persistence.csv.CsvRoomRepositoryTest.saveRooms_overwritesRatherThanAppends(com.group10.scheduler.persistence.csv.CsvRoomRepositoryTest) (1 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_findsAvailableRoom(com.group10.scheduler.panels.BookingPanelTest) (81 ms)</li><li>com.group10.scheduler.panels.AdminPanelTest.refreshButton(com.group10.scheduler.panels.AdminPanelTest) (145 ms)</li><li>com.group10.scheduler.panels.AdminPanelTest.addRoomRefreshesTable(com.group10.scheduler.panels.AdminPanelTest) (154 ms)</li><li>com.group10.scheduler.panels.AdminPanelTest.maintenance(com.group10.scheduler.panels.AdminPanelTest) (212 ms)</li><li>com.group10.scheduler.panels.AdminPanelTest.disableThenEnableTableStatus(com.group10.scheduler.panels.AdminPanelTest) (286 ms)</li><li>com.group10.scheduler.room.RoomTest.constructor_createsASensorSystem(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.room.RoomTest.sensorSystem_idIsDerivedFromRoomId(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.checkIn_withinWindow_succeeds(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.payForBooking_successfulPayment_completesBooking(com.group10.scheduler.booking.BookingManagerTest) (2 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.checkIn_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onCheckInClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.payForBooking_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onPayClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_validSelection_checksInSuccessfully(com.group10.scheduler.panels.BookingPanelTest) (78 ms)</li><li>com.group10.scheduler.room.RoomTest.isAvailable_falseWhenStatusIsNotAvailable(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.room.RoomTest.closeForMaintenance_setsStatusToMaintenance(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.room.RoomTest.occupiedStatus_isNotAvailable(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.getAvailableRooms_emptyWhenNoneAvailable(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.getAvailableRooms_returnsOnlyAvailableRooms(com.group10.scheduler.room.RoomManagerTest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_roomNotAvailable_throws(com.group10.scheduler.booking.BookingManagerTest) (2 ms)</li><li>com.group10.scheduler.room.RoomTest.disable_setsStatusToDisabled(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.room.RoomTest.enable_setsStatusToAvailable(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.disableRoom_existingRoom_setsDisabledAndReturnsTrue(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.closeRoom_existingRoom_setsMaintenanceAndReturnsTrue(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.enableRoom_existingRoom_setsAvailableAndReturnsTrue(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.accounts.AdministratorTest.disableRoom_delegatesToRoomManager(com.group10.scheduler.accounts.AdministratorTest) (0 ms)</li><li>com.group10.scheduler.accounts.AdministratorTest.enableRoom_delegatesToRoomManager(com.group10.scheduler.accounts.AdministratorTest) (1 ms)</li><li>com.group10.scheduler.accounts.AdministratorTest.closeRoom_delegatesToRoomManager(com.group10.scheduler.accounts.AdministratorTest) (1 ms)</li><li>com.group10.scheduler.room.RoomTest.isAvailable_trueWhenStatusIsAvailable(com.group10.scheduler.room.RoomTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.getBookableRooms_noConflicts_returnsRoom(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onSearchRoomsClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.getBookableRooms_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_depositPaymentFails_throwsIllegalState(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_validRequest_createsConfirmedBookingAndDeposit(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.getAllBookings_returnsAllCreatedBookings(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_institutionalBilling_validFields_succeeds(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_debitCard_validFields_succeeds(com.group10.scheduler.booking.BookingManagerTest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.checkIn_wrongUserEmail_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.getAllPayments_returnsAllCreatedPayments(com.group10.scheduler.booking.BookingManagerTest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.checkIn_beforeStartTime_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.editBooking_conflictsWithAnotherBooking_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.cancelBooking_afterStartTime_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (3 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.extendBooking_validExtension_succeeds(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.getBookableRooms_excludesRoomWithConflictingActiveBooking(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.checkIn_after30MinuteWindow_expiresBookingAndReturnsFalse(com.group10.scheduler.booking.BookingManagerTest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.editBooking_validEdit_succeeds(com.group10.scheduler.booking.BookingManagerTest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.extendBooking_conflictsWithAnotherBooking_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.cancelBooking_beforeStartTime_succeedsAndRefunds(com.group10.scheduler.booking.BookingManagerTest) (3 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onBookRoomClicked_usesCurrentUsersEmail(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.bookRoom_validRequest_succeeds(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.getAllBookings_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.getPaymentForBooking_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (1 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.findPaymentByBookingId_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.getBookableRooms_ignoresCancelledBookingsWhenCheckingConflicts(com.group10.scheduler.booking.BookingManagerTest) (2 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.editBooking_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.extendBooking_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onEditBookingClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onExtendClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onCancelClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.refreshMyBookings_populatesTableFromController(com.group10.scheduler.panels.BookingPanelTest) (7 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.cancelBooking_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.getMyBookings_returnsOnlyCurrentUsersBookings(com.group10.scheduler.gui.GUIControllerTest) (7 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_conflictingBooking_throws(com.group10.scheduler.booking.BookingManagerTest) (28 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_validSelection_cancelsSuccessfully(com.group10.scheduler.panels.BookingPanelTest) (80 ms)</li><li>com.group10.scheduler.room.RoomTest.toString_containsKeyFields(com.group10.scheduler.room.RoomTest) (8 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.getAllRooms_returnsEveryRoomRegardlessOfStatus(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.constructor_loadsRoomsFromRepository(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.addRoom_persistsThroughRepository(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.findRoomById_existingRoom_returnsRoom(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.addRoom_duplicateRoomId_returnsFalse(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.room.RoomManagerTest.addRoom_validRoom_succeeds(com.group10.scheduler.room.RoomManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_nullMethod_throws(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.accounts.AdministratorTest.addRoom_duplicateRoomId_returnsFalse(com.group10.scheduler.accounts.AdministratorTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.getBookableRooms_unparseableDates_returnsEmptyList(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.getAllRooms_delegatesToRoomManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.getCurrentUser_initiallyNull(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.getBookableRooms_startNotBeforeEnd_returnsEmptyList(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.findPaymentByBookingId_nonExistent_returnsNull(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_creditCardWrongFieldCount_throws(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_institutionalBilling_nonNumericOrgId_throws(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.checkIn_bookingNotFound_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.findBooking_nonExistent_returnsNull(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_nullUser_throws(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.editBooking_bookingNotFound_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.getMyBookings_noCurrentUser_returnsEmptyList(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onLoginClicked_invalidCredentials_leavesCurrentUserNull(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.closeRoom_invalidAdmin_returnsFalse(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.addRoom_invalidAdmin_returnsFalse(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_startNotBeforeEnd_throws(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_nullRoom_throws(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.payForBooking_bookingNotFound_returnsNegativeOne(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.generateAdministratorAccount_validRequest_succeeds(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.login_nonExistentUser_returnsNull(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.extendBooking_bookingNotFound_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.isAdministrator_unknownId_returnsFalse(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.bookRoom_unparseableDates_throws(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.enableRoom_invalidAdmin_returnsFalse(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.constructor_rehydratesBookingsAndPaymentsFromRepositories(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.cancelBooking_bookingNotFound_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.isAdministrator_afterGeneration_returnsTrue(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.accounts.AdministratorTest.addRoom_delegatesToRoomManager_andSucceeds(com.group10.scheduler.accounts.AdministratorTest) (3 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.bookRoom_userNotFound_throwsBecauseUserResolvesToNull(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.AdminControllerTest.onAddRoomClicked_withSession_succeeds(com.group10.scheduler.gui.AdminControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.addRoom_validAdmin_succeeds(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.closeRoom_validAdmin_succeeds(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.disableRoom_validAdmin_succeeds(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.enableRoom_validAdmin_succeeds(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.checkIn_roomNoLongerExists_returnsFalse(com.group10.scheduler.booking.BookingManagerTest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerTest.payForBooking_remainingBalanceZeroOrLess_returnsZero(com.group10.scheduler.booking.BookingManagerTest) (1 ms)</li><li>com.group10.scheduler.gui.AdminControllerTest.onCloseRoomClicked_withSession_succeeds(com.group10.scheduler.gui.AdminControllerTest) (0 ms)</li><li>com.group10.scheduler.gui.AdminControllerTest.onEnableRoomClicked_withSession_succeeds(com.group10.scheduler.gui.AdminControllerTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onRegisterClicked_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.createAccount_delegatesToAccountManagement(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.login_correctCredentials_returnsUser(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.login_wrongPassword_returnsNull(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onLoginClicked_validCredentials_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.bookRoom_roomNotFound_throwsBecauseRoomResolvesToNull(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.panelConstructsWithoutError(com.group10.scheduler.panels.BookingPanelTest) (7 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest) (77 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_noRoomsAvailable_showsNoRoomsMessage(com.group10.scheduler.panels.BookingPanelTest) (78 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest) (114 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.25.5 <a href='https://github.com/sponsors/hcoles'>support</a>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Student.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.group10.scheduler.accounts;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Student extends UniversityUser {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private static final double HOURLY_RATE = 20.0;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//constructor</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public Student(String email,String password,String accountType,String userName, long organizationId){</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;   super(email, password, accountType, userName,organizationId);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public double getHourlyRate() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_11'/>
+11
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_11'>1</a>
+<span>
+1. getHourlyRate : replaced double return with 0.0d for com/group10/scheduler/accounts/Student::getHourlyRate &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return HOURLY_RATE;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@77774571_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@77774571_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@77774571_11'>11</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@77774571_11'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getHourlyRate<br/><b>Killed by : </b>com.group10.scheduler.accounts.RegisteredUserAITest.studentReturnsCorrectHourlyRate(com.group10.scheduler.accounts.RegisteredUserAITest)</span></span> replaced double return with 0.0d for com/group10/scheduler/accounts/Student::getHourlyRate &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.group10.scheduler.accounts.RegisteredUserAITest.studentReturnsCorrectHourlyRate(com.group10.scheduler.accounts.RegisteredUserAITest) (0 ms)</li><li>com.group10.scheduler.accounts.RegisteredUserAITest.toStringReflectsUpdatedValues(com.group10.scheduler.accounts.RegisteredUserAITest) (1 ms)</li><li>com.group10.scheduler.accounts.RegisteredUserFactoryAITest.createsStudentForStudentAccountType(com.group10.scheduler.accounts.RegisteredUserFactoryAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.bookRoom_failsWhenTheDepositPaymentIsDeclined(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.createAccount_registersAUserThroughTheAccountSubsystem(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.getAllBookingsAndPayments_handOutCopiesSoCallersCannotMutateInternalState(com.group10.scheduler.booking.BookingManagerAITest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.findBooking_returnsTheBookingOrNullWithoutThrowing(com.group10.scheduler.booking.BookingManagerAITest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.findPaymentByBookingId_returnsTheDepositOrNull(com.group10.scheduler.booking.BookingManagerAITest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.bookRoom_createsAConfirmedBookingLinkedToTheUserAndRoom(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.bookRoom_chargesTheDepositUpfrontAndPersistsBothRecords(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.checkIn_refusesAUserWhoDoesNotOwnTheBooking(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.bookRoom_setsTheDepositFromTheUsersHourlyRate(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.cancelBooking_isRefusedOnceTheBookingHasStarted(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.bookRoom_refusesToDoubleBookTheSameRoomAndWindow(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.checkIn_isRefusedBeforeTheBookingHasEvenStarted(com.group10.scheduler.booking.BookingManagerAITest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.editBooking_ignoresTheBookingsOwnWindowWhenCheckingForConflicts(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.extendBooking_isRefusedWhenTheRoomIsBookedForTheExtraTime(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.checkIn_expiresTheBookingAndForfeitsTheDepositAfterThirtyMinutes(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.extendBooking_pushesTheEndTimeOutAndPersists(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.bookRoom_allowsTheSameRoomForANonOverlappingWindow(com.group10.scheduler.booking.BookingManagerAITest) (3 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.editBooking_refusesToMoveOntoAnotherBookingOfTheSameRoom(com.group10.scheduler.booking.BookingManagerAITest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.getBookableRooms_excludesARoomAlreadyBookedForThatWindow(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.editBooking_movesBothTimesAndPersistsTheChange(com.group10.scheduler.booking.BookingManagerAITest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.payForBooking_returnsZeroWhenNothingIsOwed(com.group10.scheduler.booking.BookingManagerAITest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.cancelBooking_succeedsBeforeStartAndRefundsTheDeposit(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.cancelBooking_freesTheRoomForSomebodyElse(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.checkIn_marksTheRoomOccupiedViaTheBadgeScan(com.group10.scheduler.booking.BookingManagerAITest) (2 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.checkIn_succeedsInsideTheThirtyMinuteWindowAndRecordsTheTime(com.group10.scheduler.booking.BookingManagerAITest) (2 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.onBookRoomClicked_booksAsTheLoggedInUser(com.group10.scheduler.gui.GUIControllerAITest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.bookRoom_resolvesTheEmailAndRoomIdThenDelegates(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.findPaymentByBookingId_returnsTheDepositReceipt(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.getPaymentForBooking_returnsTheReceiptOrNull(com.group10.scheduler.gui.GUIControllerAITest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.payForBooking_chargesTheBalanceAfterTheDepositAndCompletesTheBooking(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.readOnlyViewsExposeTheCurrentRoomsAndBookings(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.payForBooking_recordsTheSecondPaymentSeparatelyFromTheDeposit(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.getBookableRooms_treatsCancelledExpiredAndCompletedSlotsAsFree(com.group10.scheduler.booking.BookingManagerAITest) (1 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.onExtendClicked_pushesTheEndTimeOut(com.group10.scheduler.gui.GUIControllerAITest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.getMyBookings_returnsOnlyTheSessionUsersBookings(com.group10.scheduler.gui.GUIControllerAITest) (1 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.onEditBookingClicked_movesTheBookingBeforeItStarts(com.group10.scheduler.gui.GUIControllerAITest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.getBookableRooms_hidesRoomsAlreadyBookedForThatWindow(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.getMyBookings_growsAsTheSessionUserBooksMore(com.group10.scheduler.gui.GUIControllerAITest) (4 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.onCheckInClicked_checksInTheSessionUsersBooking(com.group10.scheduler.gui.GUIControllerAITest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.checkIn_routesThroughToTheBookingSubsystem(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.refreshMyBookings_showsTheSessionUsersBookings(com.group10.scheduler.panels.BookingPanelAITest) (7 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.onCancelClicked_cancelsBeforeStartAndRefusesAfterwards(com.group10.scheduler.gui.GUIControllerAITest) (1 ms)</li><li>com.group10.scheduler.accounts.RegisteredUserAITest.toStringContainsUserInformation(com.group10.scheduler.accounts.RegisteredUserAITest) (32 ms)</li><li>com.group10.scheduler.booking.BookingManagerAITest.bookRoom_acceptsAllThreePaymentMethodsWithTheirOwnFieldSets(com.group10.scheduler.booking.BookingManagerAITest) (15 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.refreshMyBookings_doesNotDuplicateRowsWhenCalledRepeatedly(com.group10.scheduler.panels.BookingPanelAITest) (9 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.editCancelAndExtend_delegateToBookingManagerRatherThanTheBookingObject(com.group10.scheduler.facade.SchedulerFacadeAITest) (1 ms)</li><li>com.group10.scheduler.gui.GUIControllerAITest.onPayClicked_returnsTheAmountChargedAndMinusOneWhenUnknown(com.group10.scheduler.gui.GUIControllerAITest) (2 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.payForBooking_settlesTheBalanceAndCompletesTheBooking(com.group10.scheduler.facade.SchedulerFacadeAITest) (3 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.theRefreshButtonRebuildsTheBookingsTable(com.group10.scheduler.panels.BookingPanelAITest) (72 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.checkIn_isReportedAsRejectedBeforeTheBookingStarts(com.group10.scheduler.panels.BookingPanelAITest) (78 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.bookingActionsReportThatNothingIsSelected(com.group10.scheduler.panels.BookingPanelAITest) (81 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.cancel_isReportedAsRejectedOnceTheBookingHasStarted(com.group10.scheduler.panels.BookingPanelAITest) (78 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.cancel_succeedsBeforeStartAndShowsTheRefundMessage(com.group10.scheduler.panels.BookingPanelAITest) (78 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.checkIn_succeedsInsideTheWindowAndUpdatesTheTable(com.group10.scheduler.panels.BookingPanelAITest) (81 ms)</li><li>com.group10.scheduler.panels.BookingPanelAITest.search_hidesARoomOnceItIsBookedForThatWindow(com.group10.scheduler.panels.BookingPanelAITest) (143 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.25.5 <a href='https://github.com/sponsors/hcoles'>support</a>
+
+</body>
+</html>

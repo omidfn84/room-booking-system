@@ -1,0 +1,3160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>AccountManagement.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>package com.group10.scheduler.accounts;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.HashSet;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Set;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.group10.scheduler.persistence.UserRepository;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class AccountManagement {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;private final Set&#60;String&#62; registeredEmails = new HashSet&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;private final List&#60;RegisteredUser&#62; registeredUsers = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// calling the factory method to create account</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private final RegisteredUserFactory factory;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// Adapter pattern: users are persisted through the UserRepository target interface</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private final UserRepository userRepository;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// constructor</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;public AccountManagement(UserRepository userRepository) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;factory = new RegisteredUserFactory();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.userRepository = userRepository;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;// rehydrate users that were validated when originally registered</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;registeredUsers.addAll(userRepository.loadUsers());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;for (RegisteredUser user : registeredUsers) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;registeredEmails.add(user.getEmail().toLowerCase());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// creating an enum for account types with flexibility of adding more types</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;public enum AccountType {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;STUDENT(true), STAFF(true), FACULTY(true),</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;// partner is not a university account</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;PARTNER(false);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;private final boolean universityVerificationRequired;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;AccountType(boolean universityVerificationRequired) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;this.universityVerificationRequired = universityVerificationRequired;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;public boolean requiresUniversityVerification() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_44'/>
+44
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_44'>2</a>
+<span>
+1. requiresUniversityVerification : replaced boolean return with true for com/group10/scheduler/accounts/AccountManagement$AccountType::requiresUniversityVerification &rarr; SURVIVED<br/>
+2. requiresUniversityVerification : replaced boolean return with false for com/group10/scheduler/accounts/AccountManagement$AccountType::requiresUniversityVerification &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;&#9;return universityVerificationRequired;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// validating email</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;private final String emailFormat = &#34;^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// diagram name: verifyUniqueEmail (checks format AND uniqueness)</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private void verifyUniqueEmail(String email) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_54'/>
+54
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_54'>2</a>
+<span>
+1. verifyUniqueEmail : negated conditional &rarr; KILLED<br/>
+2. verifyUniqueEmail : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (email == null || email.isBlank()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Email cannot be empty.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;String normalizedEmail = email.trim().toLowerCase();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_60'/>
+60
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_60'>1</a>
+<span>
+1. verifyUniqueEmail : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (!normalizedEmail.matches(emailFormat)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Email format is invalid.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_64'/>
+64
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_64'>1</a>
+<span>
+1. verifyUniqueEmail : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (registeredEmails.contains(normalizedEmail)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;This email is already registered.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// diagram name: validateStrongPassword</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private void validateStrongPassword(String password) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_72'/>
+72
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_72'>2</a>
+<span>
+1. validateStrongPassword : negated conditional &rarr; KILLED<br/>
+2. validateStrongPassword : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (password == null || password.isBlank()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Password cannot be empty.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_76'/>
+76
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_76'>2</a>
+<span>
+1. validateStrongPassword : changed conditional boundary &rarr; SURVIVED<br/>
+2. validateStrongPassword : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;if (password.length() &#60; 8) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Password must contain at least 8 characters.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_80'/>
+80
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_80'>1</a>
+<span>
+1. validateStrongPassword : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (!password.matches(&#34;.*[A-Z].*&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Password must contain at least one uppercase letter.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_84'/>
+84
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_84'>1</a>
+<span>
+1. validateStrongPassword : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (!password.matches(&#34;.*[a-z].*&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Password must contain at least one lowercase letter.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_88'/>
+88
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_88'>1</a>
+<span>
+1. validateStrongPassword : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (!password.matches(&#34;.*\\d.*&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Password must contain at least one number.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_92'/>
+92
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_92'>1</a>
+<span>
+1. validateStrongPassword : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (!password.matches(&#34;.*[^A-Za-z0-9].*&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Password must contain at least one symbol.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private void validateUserName(String userName) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_98'/>
+98
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_98'>2</a>
+<span>
+1. validateUserName : negated conditional &rarr; KILLED<br/>
+2. validateUserName : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (userName == null || userName.isBlank()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Username cannot be empty.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// verify university accounts</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private void verifyUniversityAccount(String email) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_106'/>
+106
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_106'>1</a>
+<span>
+1. verifyUniversityAccount : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (!email.toLowerCase().endsWith(&#34;@yorku.ca&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;University accounts must use a university email.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;/*</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * private void validateAccountType(String accountType) { if (accountType ==</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * null || accountType.isBlank()) { throw new</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * IllegalArgumentException(&#34;Account type cannot be empty.&#34;); }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_116'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * if (!accountType.equalsIgnoreCase(&#34;STUDENT&#34;) &#38;&#38;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * !accountType.equalsIgnoreCase(&#34;STAFF&#34;) &#38;&#38;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * !accountType.equalsIgnoreCase(&#34;FACULTY&#34;) &#38;&#38;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * !accountType.equalsIgnoreCase(&#34;PARTNER&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * throw new IllegalArgumentException(&#34;Unsupported account type: &#34; +</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * accountType); } }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private AccountType validateAccountType(String accountType) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_126'/>
+126
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_126'>2</a>
+<span>
+1. validateAccountType : negated conditional &rarr; KILLED<br/>
+2. validateAccountType : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (accountType == null || accountType.isBlank()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Account type cannot be empty.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;try {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_131'/>
+131
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_131'>1</a>
+<span>
+1. validateAccountType : replaced return value with null for com/group10/scheduler/accounts/AccountManagement::validateAccountType &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;return AccountType.valueOf(accountType.trim().toUpperCase());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;} catch (IllegalArgumentException e) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;throw new IllegalArgumentException(&#34;Unsupported account type: &#34; + accountType);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private void validateOrganizationId(String organizationId) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_139'/>
+139
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_139'>2</a>
+<span>
+1. validateOrganizationId : negated conditional &rarr; KILLED<br/>
+2. validateOrganizationId : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;    if (organizationId == null || organizationId.isBlank()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;        throw new IllegalArgumentException(</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;            &#34;Organization ID cannot be empty.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_144'/>
+144
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_144'>1</a>
+<span>
+1. validateOrganizationId : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;    if (!organizationId.matches(&#34;\\d{9}&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;        throw new IllegalArgumentException(</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;            &#34;Organization ID must contain exactly 9 digits.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_148'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_150'/>
+150
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_150'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;// checks everything</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void validateAccount(String email, String password, String accountType, String userName, String organizationId ) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_153'/>
+153
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_153'>1</a>
+<span>
+1. validateAccount : removed call to com/group10/scheduler/accounts/AccountManagement::verifyUniqueEmail &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;verifyUniqueEmail(email);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_154'/>
+154
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_154'>1</a>
+<span>
+1. validateAccount : removed call to com/group10/scheduler/accounts/AccountManagement::validateStrongPassword &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;validateStrongPassword(password);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_155'/>
+155
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_155'>1</a>
+<span>
+1. validateAccount : removed call to com/group10/scheduler/accounts/AccountManagement::validateUserName &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;validateUserName(userName);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_156'/>
+156
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_156'>1</a>
+<span>
+1. validateAccount : removed call to com/group10/scheduler/accounts/AccountManagement::validateOrganizationId &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;validateOrganizationId(organizationId);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_158'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;AccountType type = validateAccountType(accountType);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_160'/>
+160
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_160'>1</a>
+<span>
+1. validateAccount : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;if (type.requiresUniversityVerification()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_161'/>
+161
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_161'>1</a>
+<span>
+1. validateAccount : removed call to com/group10/scheduler/accounts/AccountManagement::verifyUniversityAccount &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;&#9;verifyUniversityAccount(email);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_162'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_164'/>
+164
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_164'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_165'/>
+165
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_165'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public RegisteredUser createAccount(String email, String password, String accountType, String userName, String organizationId) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_166'/>
+166
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_166'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_167'/>
+167
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_167'>1</a>
+<span>
+1. createAccount : removed call to com/group10/scheduler/accounts/AccountManagement::validateAccount &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;validateAccount(email, password, accountType, userName, organizationId);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_168'/>
+168
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_168'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;&#9;// safe: validateOrganizationId guarantees exactly 9 digits</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_169'/>
+169
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_169'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;long orgId = Long.parseLong(organizationId.trim());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_170'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;RegisteredUser user= factory.createUser(email.trim().toLowerCase(), password, accountType.trim().toUpperCase(),</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_171'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;&#9;&#9;userName.trim(), orgId);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_172'/>
+172
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_172'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;   registeredUsers.add(user);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_173'/>
+173
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_173'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;   registeredEmails.add(email.trim().toLowerCase());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_174'/>
+174
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_174'>1</a>
+<span>
+1. createAccount : removed call to com/group10/scheduler/persistence/UserRepository::saveUsers &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;   userRepository.saveUsers(registeredUsers);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_175'/>
+175
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_175'>1</a>
+<span>
+1. createAccount : replaced return value with null for com/group10/scheduler/accounts/AccountManagement::createAccount &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;   return user;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_176'/>
+176
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_176'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_177'/>
+177
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_177'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;//Finding the user by email</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_178'/>
+178
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_178'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public RegisteredUser findByEmail(String email) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_179'/>
+179
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_179'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_180'/>
+180
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_180'>2</a>
+<span>
+1. findByEmail : negated conditional &rarr; KILLED<br/>
+2. findByEmail : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;    if (email == null || email.isBlank()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_181'/>
+181
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_181'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;        return null;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_182'/>
+182
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_182'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_183'/>
+183
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_183'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_184'/>
+184
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_184'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;    String normalizedEmail = email.trim().toLowerCase();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_185'/>
+185
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_185'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_186'/>
+186
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_186'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;    for (RegisteredUser user : registeredUsers) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_187'/>
+187
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_187'>1</a>
+<span>
+1. findByEmail : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;        if (user.getEmail().equalsIgnoreCase(normalizedEmail)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_188'/>
+188
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_188'>1</a>
+<span>
+1. findByEmail : replaced return value with null for com/group10/scheduler/accounts/AccountManagement::findByEmail &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;            return user;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_189'/>
+189
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_189'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_190'/>
+190
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_190'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_191'/>
+191
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_191'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_192'/>
+192
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_192'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;    return null;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_193'/>
+193
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_193'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@cb7fa71_194'/>
+194
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_194'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_44'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>requiresUniversityVerification<br/><b>Killed by : </b>none</span></span> replaced boolean return with true for com/group10/scheduler/accounts/AccountManagement$AccountType::requiresUniversityVerification &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement$AccountType,-method=requiresUniversityVerification,-methodDesc=()Z],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement$AccountType,-method=requiresUniversityVerification,-methodDesc=()Z],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement$AccountType,-method=requiresUniversityVerification,-methodDesc=()Z],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>com.group10.scheduler.gui.GUIControllerTest.onRegisterClicked_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onLoginClicked_validCredentials_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.panelConstructsWithoutError(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onBookRoomClicked_usesCurrentUsersEmail(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.getPaymentForBooking_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onEditBookingClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onExtendClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onCheckInClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onCancelClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.refreshMyBookings_populatesTableFromController(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.getMyBookings_returnsOnlyCurrentUsersBookings(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onPayClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.LoginPanelTest.login_validCredentials_showsSuccessMessageAndCallsCallback(com.group10.scheduler.panels.LoginPanelTest)</li> <li>com.group10.scheduler.panels.LoginPanelTest.register_validData_showsSuccessMessageAndCallsCallback(com.group10.scheduler.panels.LoginPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_noRoomsAvailable_showsNoRoomsMessage(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_findsAvailableRoom(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_validSelection_checksInSuccessfully(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_validSelection_cancelsSuccessfully(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest)</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>requiresUniversityVerification<br/><b>Killed by : </b>none</span></span> replaced boolean return with false for com/group10/scheduler/accounts/AccountManagement$AccountType::requiresUniversityVerification &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement$AccountType,-method=requiresUniversityVerification,-methodDesc=()Z],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement$AccountType,-method=requiresUniversityVerification,-methodDesc=()Z],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement$AccountType,-method=requiresUniversityVerification,-methodDesc=()Z],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>com.group10.scheduler.gui.GUIControllerTest.onRegisterClicked_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onLoginClicked_validCredentials_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.panelConstructsWithoutError(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onBookRoomClicked_usesCurrentUsersEmail(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.getPaymentForBooking_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onEditBookingClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onExtendClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onCheckInClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onCancelClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.refreshMyBookings_populatesTableFromController(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.getMyBookings_returnsOnlyCurrentUsersBookings(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onPayClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.LoginPanelTest.login_validCredentials_showsSuccessMessageAndCallsCallback(com.group10.scheduler.panels.LoginPanelTest)</li> <li>com.group10.scheduler.panels.LoginPanelTest.register_validData_showsSuccessMessageAndCallsCallback(com.group10.scheduler.panels.LoginPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_noRoomsAvailable_showsNoRoomsMessage(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_findsAvailableRoom(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_validSelection_checksInSuccessfully(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_validSelection_cancelsSuccessfully(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_54'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>verifyUniqueEmail<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>verifyUniqueEmail<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_60'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>verifyUniqueEmail<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_64'>64</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_64'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>verifyUniqueEmail<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_72'>72</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_72'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateStrongPassword<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>validateStrongPassword<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_76'>76</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_76'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateStrongPassword<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement,-method=validateStrongPassword,-methodDesc=(Ljava/lang/String;)V],-indexes=[22],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement,-method=validateStrongPassword,-methodDesc=(Ljava/lang/String;)V],-indexes=[22],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.AccountManagement,-method=validateStrongPassword,-methodDesc=(Ljava/lang/String;)V],-indexes=[22],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordTooShort_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingDigit_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingLowercase_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingUppercase_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingSymbol_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_organizationIdNonNumeric_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_organizationIdWrongLength_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_universityAccountWithNonYorkuEmail_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_unsupportedAccountType_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validStudent_succeeds(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_duplicateEmail_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.findByEmail_existingUser_returnsUser(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_blankUserName_throws(com.group10.scheduler.accounts.AccountManagementTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onRegisterClicked_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onLoginClicked_validCredentials_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.panelConstructsWithoutError(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onBookRoomClicked_usesCurrentUsersEmail(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.getPaymentForBooking_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onEditBookingClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onExtendClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onCheckInClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onCancelClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.refreshMyBookings_populatesTableFromController(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.getMyBookings_returnsOnlyCurrentUsersBookings(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.gui.GUIControllerTest.onPayClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest)</li> <li>com.group10.scheduler.panels.LoginPanelTest.login_validCredentials_showsSuccessMessageAndCallsCallback(com.group10.scheduler.panels.LoginPanelTest)</li> <li>com.group10.scheduler.panels.LoginPanelTest.register_validData_showsSuccessMessageAndCallsCallback(com.group10.scheduler.panels.LoginPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_noRoomsAvailable_showsNoRoomsMessage(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_findsAvailableRoom(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_validSelection_checksInSuccessfully(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_validSelection_cancelsSuccessfully(com.group10.scheduler.panels.BookingPanelTest)</li> <li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest)</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>validateStrongPassword<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordTooShort_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_80'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateStrongPassword<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingUppercase_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_84'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateStrongPassword<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingLowercase_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_88'>88</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_88'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateStrongPassword<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingDigit_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_92'>92</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_92'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateStrongPassword<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingSymbol_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_98'>98</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_98'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateUserName<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>validateUserName<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_106'>106</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_106'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>verifyUniversityAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_universityAccountWithNonYorkuEmail_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_126'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAccountType<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>validateAccountType<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_131'>131</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_131'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAccountType<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_universityAccountWithNonYorkuEmail_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> replaced return value with null for com/group10/scheduler/accounts/AccountManagement::validateAccountType &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_139'>139</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_139'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateOrganizationId<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>validateOrganizationId<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_144'>144</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_144'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateOrganizationId<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_organizationIdWrongLength_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_153'>153</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_153'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_duplicateEmail_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> removed call to com/group10/scheduler/accounts/AccountManagement::verifyUniqueEmail &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_154'>154</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_154'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordTooShort_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> removed call to com/group10/scheduler/accounts/AccountManagement::validateStrongPassword &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_155'>155</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_155'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_blankUserName_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> removed call to com/group10/scheduler/accounts/AccountManagement::validateUserName &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_156'>156</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_156'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_organizationIdWrongLength_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> removed call to com/group10/scheduler/accounts/AccountManagement::validateOrganizationId &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_160'>160</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_160'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_universityAccountWithNonYorkuEmail_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_161'>161</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_161'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_universityAccountWithNonYorkuEmail_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> removed call to com/group10/scheduler/accounts/AccountManagement::verifyUniversityAccount &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_167'>167</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_167'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_invalidEmailFormat_throws(com.group10.scheduler.accounts.AccountManagementTest)</span></span> removed call to com/group10/scheduler/accounts/AccountManagement::validateAccount &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_174'>174</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_174'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validStudent_succeeds(com.group10.scheduler.accounts.AccountManagementTest)</span></span> removed call to com/group10/scheduler/persistence/UserRepository::saveUsers &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_175'>175</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_175'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createAccount<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest)</span></span> replaced return value with null for com/group10/scheduler/accounts/AccountManagement::createAccount &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_180'>180</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_180'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>findByEmail<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_rehydratesFromRepositoryOnConstruction(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>findByEmail<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_rehydratesFromRepositoryOnConstruction(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_187'>187</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_187'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>findByEmail<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_rehydratesFromRepositoryOnConstruction(com.group10.scheduler.accounts.AccountManagementTest)</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@cb7fa71_188'>188</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@cb7fa71_188'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>findByEmail<br/><b>Killed by : </b>com.group10.scheduler.accounts.AccountManagementTest.createAccount_rehydratesFromRepositoryOnConstruction(com.group10.scheduler.accounts.AccountManagementTest)</span></span> replaced return value with null for com/group10/scheduler/accounts/AccountManagement::findByEmail &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_universityAccountWithNonYorkuEmail_throws(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validStudent_succeeds(com.group10.scheduler.accounts.AccountManagementTest) (1 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_duplicateEmail_throws(com.group10.scheduler.accounts.AccountManagementTest) (2 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.findByEmail_existingUser_returnsUser(com.group10.scheduler.accounts.AccountManagementTest) (2 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onRegisterClicked_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.createAccount_delegatesToAccountManagement(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.login_correctCredentials_returnsUser(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.login_wrongPassword_returnsNull(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onLoginClicked_validCredentials_setsCurrentUser(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.bookRoom_roomNotFound_throwsBecauseRoomResolvesToNull(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.panelConstructsWithoutError(com.group10.scheduler.panels.BookingPanelTest) (7 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.bookRoom_validRequest_succeeds(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onBookRoomClicked_usesCurrentUsersEmail(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.getAllBookings_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.getPaymentForBooking_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (1 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.findPaymentByBookingId_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (1 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.editBooking_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.extendBooking_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onEditBookingClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onExtendClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.checkIn_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onCheckInClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onCancelClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.refreshMyBookings_populatesTableFromController(com.group10.scheduler.panels.BookingPanelTest) (7 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.cancelBooking_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.getMyBookings_returnsOnlyCurrentUsersBookings(com.group10.scheduler.gui.GUIControllerTest) (7 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.payForBooking_delegatesToBookingManager(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onPayClicked_delegatesToFacade(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.panels.LoginPanelTest.login_validCredentials_showsSuccessMessageAndCallsCallback(com.group10.scheduler.panels.LoginPanelTest) (75 ms)</li><li>com.group10.scheduler.panels.LoginPanelTest.register_validData_showsSuccessMessageAndCallsCallback(com.group10.scheduler.panels.LoginPanelTest) (78 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest) (77 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_noRoomsAvailable_showsNoRoomsMessage(com.group10.scheduler.panels.BookingPanelTest) (78 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleSearch_findsAvailableRoom(com.group10.scheduler.panels.BookingPanelTest) (81 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleCheckIn_validSelection_checksInSuccessfully(com.group10.scheduler.panels.BookingPanelTest) (78 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_validSelection_cancelsSuccessfully(com.group10.scheduler.panels.BookingPanelTest) (80 ms)</li><li>com.group10.scheduler.panels.BookingPanelTest.handleCancel_noRowSelected_showsSelectFirstMessage(com.group10.scheduler.panels.BookingPanelTest) (114 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_validPartner_doesNotRequireYorkuEmail(com.group10.scheduler.accounts.AccountManagementTest) (1 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_unsupportedAccountType_throws(com.group10.scheduler.accounts.AccountManagementTest) (1 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_organizationIdNonNumeric_throws(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_organizationIdWrongLength_throws(com.group10.scheduler.accounts.AccountManagementTest) (1 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_blankUserName_throws(com.group10.scheduler.accounts.AccountManagementTest) (11 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.findByEmail_nonExistentUser_returnsNull(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.findByEmail_blankEmail_returnsNull(com.group10.scheduler.accounts.AccountManagementTest) (1 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_rehydratesFromRepositoryOnConstruction(com.group10.scheduler.accounts.AccountManagementTest) (1 ms)</li><li>com.group10.scheduler.gui.GUIControllerTest.onLoginClicked_invalidCredentials_leavesCurrentUserNull(com.group10.scheduler.gui.GUIControllerTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.login_nonExistentUser_returnsNull(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeTest.bookRoom_userNotFound_throwsBecauseUserResolvesToNull(com.group10.scheduler.facade.SchedulerFacadeTest) (0 ms)</li><li>com.group10.scheduler.panels.LoginPanelTest.login_invalidCredentials_showsFailureMessageAndDoesNotCallCallback(com.group10.scheduler.panels.LoginPanelTest) (80 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordTooShort_throws(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingDigit_throws(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingLowercase_throws(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingUppercase_throws(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_passwordMissingSymbol_throws(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.accounts.AccountManagementTest.createAccount_invalidEmailFormat_throws(com.group10.scheduler.accounts.AccountManagementTest) (0 ms)</li><li>com.group10.scheduler.panels.LoginPanelTest.register_invalidData_showsErrorMessageAndDoesNotCallCallback(com.group10.scheduler.panels.LoginPanelTest) (73 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.25.5 <a href='https://github.com/sponsors/hcoles'>support</a>
+
+</body>
+</html>

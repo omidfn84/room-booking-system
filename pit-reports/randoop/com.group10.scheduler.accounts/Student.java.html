@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Student.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.group10.scheduler.accounts;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Student extends UniversityUser {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private static final double HOURLY_RATE = 20.0;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//constructor</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public Student(String email,String password,String accountType,String userName, long organizationId){</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;   super(email, password, accountType, userName,organizationId);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public double getHourlyRate() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_11'/>
+11
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_11'>1</a>
+<span>
+1. getHourlyRate : replaced double return with 0.0d for com/group10/scheduler/accounts/Student::getHourlyRate &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return HOURLY_RATE;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@625d9132_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@625d9132_11'>11</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@625d9132_11'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getHourlyRate<br/><b>Killed by : </b>randoopTests.RegressionTest7.test3823(randoopTests.RegressionTest7)</span></span> replaced double return with 0.0d for com/group10/scheduler/accounts/Student::getHourlyRate &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>randoopTests.RegressionTest7.test3823(randoopTests.RegressionTest7) (0 ms)</li><li>randoopTests.RegressionTest1.test0705(randoopTests.RegressionTest1) (0 ms)</li><li>randoopTests.RegressionTest6.test3160(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest7.test3998(randoopTests.RegressionTest7) (0 ms)</li><li>randoopTests.RegressionTest5.test2669(randoopTests.RegressionTest5) (0 ms)</li><li>randoopTests.RegressionTest2.test1228(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest6.test3336(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest3.test1546(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest4.test2288(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest7.test3667(randoopTests.RegressionTest7) (0 ms)</li><li>randoopTests.RegressionTest2.test1197(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest3.test1539(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest2.test1301(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest1.test0542(randoopTests.RegressionTest1) (0 ms)</li><li>randoopTests.RegressionTest2.test1196(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest2.test1270(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest1.test0699(randoopTests.RegressionTest1) (0 ms)</li><li>randoopTests.RegressionTest6.test3419(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest4.test2221(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest4.test2258(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest7.test3745(randoopTests.RegressionTest7) (0 ms)</li><li>randoopTests.RegressionTest3.test1977(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest2.test1158(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest6.test3075(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest4.test2073(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest1.test0968(randoopTests.RegressionTest1) (0 ms)</li><li>randoopTests.RegressionTest6.test3100(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest6.test3142(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest3.test1534(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest2.test1420(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest3.test1585(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest7.test3726(randoopTests.RegressionTest7) (0 ms)</li><li>randoopTests.RegressionTest6.test3172(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest5.test2969(randoopTests.RegressionTest5) (0 ms)</li><li>randoopTests.RegressionTest5.test2639(randoopTests.RegressionTest5) (0 ms)</li><li>randoopTests.RegressionTest0.test0363(randoopTests.RegressionTest0) (0 ms)</li><li>randoopTests.RegressionTest6.test3198(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest2.test1419(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest4.test2467(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest2.test1302(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest7.test3793(randoopTests.RegressionTest7) (0 ms)</li><li>randoopTests.RegressionTest1.test0572(randoopTests.RegressionTest1) (0 ms)</li><li>randoopTests.RegressionTest2.test1343(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest2.test1458(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest2.test1126(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest4.test2249(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest5.test2789(randoopTests.RegressionTest5) (0 ms)</li><li>randoopTests.RegressionTest2.test1028(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest1.test0797(randoopTests.RegressionTest1) (0 ms)</li><li>randoopTests.RegressionTest7.test3602(randoopTests.RegressionTest7) (0 ms)</li><li>randoopTests.RegressionTest5.test2971(randoopTests.RegressionTest5) (0 ms)</li><li>randoopTests.RegressionTest4.test2156(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest6.test3337(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest2.test1499(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest5.test2616(randoopTests.RegressionTest5) (0 ms)</li><li>randoopTests.RegressionTest1.test0985(randoopTests.RegressionTest1) (0 ms)</li><li>randoopTests.RegressionTest7.test3943(randoopTests.RegressionTest7) (0 ms)</li><li>randoopTests.RegressionTest3.test1989(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest3.test1875(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest4.test2008(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest2.test1408(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest1.test0666(randoopTests.RegressionTest1) (0 ms)</li><li>randoopTests.RegressionTest2.test1068(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest6.test3153(randoopTests.RegressionTest6) (0 ms)</li><li>randoopTests.RegressionTest4.test2148(randoopTests.RegressionTest4) (0 ms)</li><li>randoopTests.RegressionTest0.test0406(randoopTests.RegressionTest0) (0 ms)</li><li>randoopTests.RegressionTest3.test1540(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest3.test1777(randoopTests.RegressionTest3) (0 ms)</li><li>randoopTests.RegressionTest2.test1071(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest2.test1359(randoopTests.RegressionTest2) (0 ms)</li><li>randoopTests.RegressionTest0.test0147(randoopTests.RegressionTest0) (1 ms)</li><li>randoopTests.RegressionTest1.test0776(randoopTests.RegressionTest1) (1 ms)</li><li>randoopTests.RegressionTest3.test1976(randoopTests.RegressionTest3) (4 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.25.5 <a href='https://github.com/sponsors/hcoles'>support</a>
+
+</body>
+</html>

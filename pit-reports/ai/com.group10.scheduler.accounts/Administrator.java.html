@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Administrator.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.group10.scheduler.accounts;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.group10.scheduler.room.Room;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.group10.scheduler.room.RoomManager;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Administrator {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private String adminId;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private String name;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private String email;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;private RoomManager roomManager;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;//package private Constructor only will be called by chief </span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;//the SHARED RoomManager is injected: all admins manage the same room list</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;Administrator(String adminId,String name,String email,RoomManager roomManager){</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.adminId=adminId;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.name=name;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.email=email;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;&#9;this.roomManager = roomManager;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;//setters and getters</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String getAdminId() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_22'/>
+22
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_22'>1</a>
+<span>
+1. getAdminId : replaced return value with &#34;&#34; for com/group10/scheduler/accounts/Administrator::getAdminId &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return adminId;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void setAdminId(String adminId) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;this.adminId = adminId;</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String getName() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_28'/>
+28
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_28'>1</a>
+<span>
+1. getName : replaced return value with &#34;&#34; for com/group10/scheduler/accounts/Administrator::getName &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return name;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void setName(String name) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;this.name = name;</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String getEmail() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_34'/>
+34
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_34'>1</a>
+<span>
+1. getEmail : replaced return value with &#34;&#34; for com/group10/scheduler/accounts/Administrator::getEmail &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return email;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public void setEmail(String email) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;&#9;this.email = email;</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;@Override</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public String toString() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_41'/>
+41
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_41'>1</a>
+<span>
+1. toString : replaced return value with &#34;&#34; for com/group10/scheduler/accounts/Administrator::toString &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;&#9;return &#34;Administrator &#34; + adminId + &#34; (&#34; + name + &#34;, &#34; + email + &#34;)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;//calling functions from room manager class (</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean addRoom(Room r) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_46'>2</a>
+<span>
+1. addRoom : replaced boolean return with true for com/group10/scheduler/accounts/Administrator::addRoom &rarr; KILLED<br/>
+2. addRoom : replaced boolean return with false for com/group10/scheduler/accounts/Administrator::addRoom &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;&#9;return roomManager.addRoom(r);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean enableRoom(String roomId) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_50'/>
+50
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_50'>2</a>
+<span>
+1. enableRoom : replaced boolean return with false for com/group10/scheduler/accounts/Administrator::enableRoom &rarr; KILLED<br/>
+2. enableRoom : replaced boolean return with true for com/group10/scheduler/accounts/Administrator::enableRoom &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;    return roomManager.enableRoom(roomId);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean disableRoom(String roomId) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_54'/>
+54
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_54'>2</a>
+<span>
+1. disableRoom : replaced boolean return with false for com/group10/scheduler/accounts/Administrator::disableRoom &rarr; KILLED<br/>
+2. disableRoom : replaced boolean return with true for com/group10/scheduler/accounts/Administrator::disableRoom &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;    return roomManager.disableRoom(roomId);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;public boolean closeRoom(String roomId) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_58'/>
+58
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_58'>2</a>
+<span>
+1. closeRoom : replaced boolean return with true for com/group10/scheduler/accounts/Administrator::closeRoom &rarr; KILLED<br/>
+2. closeRoom : replaced boolean return with false for com/group10/scheduler/accounts/Administrator::closeRoom &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;    return roomManager.closeRoom(roomId);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;}</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7aac8884_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7aac8884_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_22'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAdminId<br/><b>Killed by : </b>com.group10.scheduler.facade.SchedulerFacadeAITest.generateAdministratorAccount_createsAnAdministrator(com.group10.scheduler.facade.SchedulerFacadeAITest)</span></span> replaced return value with &#34;&#34; for com/group10/scheduler/accounts/Administrator::getAdminId &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7aac8884_28'>28</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_28'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getName<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.onGenerateAdminClicked_createsAnAdministrator(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced return value with &#34;&#34; for com/group10/scheduler/accounts/Administrator::getName &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7aac8884_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_34'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getEmail<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.onGenerateAdminClicked_createsAnAdministrator(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced return value with &#34;&#34; for com/group10/scheduler/accounts/Administrator::getEmail &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7aac8884_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_41'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for com/group10/scheduler/accounts/Administrator::toString &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.Administrator,-method=toString,-methodDesc=()Ljava/lang/String;],-indexes=[10],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.Administrator,-method=toString,-methodDesc=()Ljava/lang/String;],-indexes=[10],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=com.group10.scheduler.accounts.Administrator,-method=toString,-methodDesc=()Ljava/lang/String;],-indexes=[10],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>com.group10.scheduler.panels.AdminPanelAITest.generateAdmin_currentlyACCEPTSAblankId_knownGapInTheAccountsPackage(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.generateAdmin_reportsSuccessAndPrefillsTheLoginField(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.generateAdmin_worksWithoutAnAdminSessionBecauseItIsTheChiefsAct(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.generateAdmin_reportsADuplicateIdAsAnError(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.adminLogin_unlocksRoomManagementAndNamesTheAdmin(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.adminLogin_trimsSurroundingWhitespaceFromTheTypedId(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_rejectsABlankCapacity(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_rejectsANonNumericCapacityWithoutAddingAnything(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_addsTheRoomAndShowsItInTheTable(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.refreshRooms_showsDisabledRoomsToo(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.disableSelected_updatesTheStatusShownInTheTable(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.closeForMaintenance_putsTheRoomIntoMaintenance(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.enableDisableAndClose_reportThatNothingIsSelected(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_reportsADuplicateRoomIdAsRejected(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.aRoomActionAfterLogoutIsReportedAsFailed(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.selectingTheSecondRowActsOnTheSecondRoom(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.refreshRooms_rebuildsTheTableFromTheControllerWithoutDuplicating(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.enableSelected_bringsADisabledRoomBack(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_acceptsSeveralDistinctRooms(com.group10.scheduler.panels.AdminPanelAITest)</li> <li>com.group10.scheduler.panels.AdminPanelAITest.aFailedLoginAfterASuccessfulOneRelocksTheControls(com.group10.scheduler.panels.AdminPanelAITest)</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7aac8884_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>addRoom<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.onAddRoomClicked_refusesADuplicateRoomId(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced boolean return with true for com/group10/scheduler/accounts/Administrator::addRoom &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>addRoom<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.onAddRoomClicked_addsTheRoomWhenLoggedIn(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced boolean return with false for com/group10/scheduler/accounts/Administrator::addRoom &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7aac8884_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_50'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>enableRoom<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.onEnableRoomClicked_bringsADisabledRoomBack(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced boolean return with false for com/group10/scheduler/accounts/Administrator::enableRoom &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>enableRoom<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.roomOperationsReturnFalseForAnUnknownRoomIdEvenWhenLoggedIn(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced boolean return with true for com/group10/scheduler/accounts/Administrator::enableRoom &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7aac8884_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_54'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>disableRoom<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.onDisableRoomClicked_disablesTheRoomWhenLoggedIn(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced boolean return with false for com/group10/scheduler/accounts/Administrator::disableRoom &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>disableRoom<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.roomOperationsReturnFalseForAnUnknownRoomIdEvenWhenLoggedIn(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced boolean return with true for com/group10/scheduler/accounts/Administrator::disableRoom &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7aac8884_58'>58</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7aac8884_58'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>closeRoom<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.roomOperationsReturnFalseForAnUnknownRoomIdEvenWhenLoggedIn(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced boolean return with true for com/group10/scheduler/accounts/Administrator::closeRoom &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>closeRoom<br/><b>Killed by : </b>com.group10.scheduler.gui.AdminControllerAITest.onCloseRoomClicked_putsTheRoomIntoMaintenance(com.group10.scheduler.gui.AdminControllerAITest)</span></span> replaced boolean return with false for com/group10/scheduler/accounts/Administrator::closeRoom &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.group10.scheduler.gui.AdminControllerAITest.onGenerateAdminClicked_createsAnAdministrator(com.group10.scheduler.gui.AdminControllerAITest) (1 ms)</li><li>com.group10.scheduler.gui.AdminControllerAITest.enableDisableAndCloseAreAllRefusedWithoutAnAdminSession(com.group10.scheduler.gui.AdminControllerAITest) (0 ms)</li><li>com.group10.scheduler.gui.AdminControllerAITest.onAddRoomClicked_addsTheRoomWhenLoggedIn(com.group10.scheduler.gui.AdminControllerAITest) (0 ms)</li><li>com.group10.scheduler.gui.AdminControllerAITest.onAddRoomClicked_storesEveryReq7DetailAndStartsAvailable(com.group10.scheduler.gui.AdminControllerAITest) (0 ms)</li><li>com.group10.scheduler.gui.AdminControllerAITest.onAddRoomClicked_refusesADuplicateRoomId(com.group10.scheduler.gui.AdminControllerAITest) (0 ms)</li><li>com.group10.scheduler.gui.AdminControllerAITest.onDisableRoomClicked_disablesTheRoomWhenLoggedIn(com.group10.scheduler.gui.AdminControllerAITest) (0 ms)</li><li>com.group10.scheduler.gui.AdminControllerAITest.onCloseRoomClicked_putsTheRoomIntoMaintenance(com.group10.scheduler.gui.AdminControllerAITest) (0 ms)</li><li>com.group10.scheduler.gui.AdminControllerAITest.onEnableRoomClicked_bringsADisabledRoomBack(com.group10.scheduler.gui.AdminControllerAITest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.enableDisableAndCloseRoom_allRequireAValidAdminId(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.addRoom_succeedsForAValidAdmin(com.group10.scheduler.facade.SchedulerFacadeAITest) (5 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.readOnlyViewsExposeTheCurrentRoomsAndBookings(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_addsTheRoomAndShowsItInTheTable(com.group10.scheduler.panels.AdminPanelAITest) (217 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.refreshRooms_showsDisabledRoomsToo(com.group10.scheduler.panels.AdminPanelAITest) (282 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.disableSelected_updatesTheStatusShownInTheTable(com.group10.scheduler.panels.AdminPanelAITest) (285 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.closeForMaintenance_putsTheRoomIntoMaintenance(com.group10.scheduler.panels.AdminPanelAITest) (286 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.enableDisableAndClose_reportThatNothingIsSelected(com.group10.scheduler.panels.AdminPanelAITest) (289 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_reportsADuplicateRoomIdAsRejected(com.group10.scheduler.panels.AdminPanelAITest) (290 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.aRoomActionAfterLogoutIsReportedAsFailed(com.group10.scheduler.panels.AdminPanelAITest) (303 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.selectingTheSecondRowActsOnTheSecondRoom(com.group10.scheduler.panels.AdminPanelAITest) (348 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.refreshRooms_rebuildsTheTableFromTheControllerWithoutDuplicating(com.group10.scheduler.panels.AdminPanelAITest) (350 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.enableSelected_bringsADisabledRoomBack(com.group10.scheduler.panels.AdminPanelAITest) (351 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_acceptsSeveralDistinctRooms(com.group10.scheduler.panels.AdminPanelAITest) (359 ms)</li><li>com.group10.scheduler.gui.AdminControllerAITest.roomOperationsReturnFalseForAnUnknownRoomIdEvenWhenLoggedIn(com.group10.scheduler.gui.AdminControllerAITest) (0 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.roomOperationsReturnFalseForAnUnknownRoomEvenWithAValidAdmin(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.generateAdmin_currentlyACCEPTSAblankId_knownGapInTheAccountsPackage(com.group10.scheduler.panels.AdminPanelAITest) (71 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.generateAdmin_reportsSuccessAndPrefillsTheLoginField(com.group10.scheduler.panels.AdminPanelAITest) (74 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.generateAdmin_worksWithoutAnAdminSessionBecauseItIsTheChiefsAct(com.group10.scheduler.panels.AdminPanelAITest) (75 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.generateAdmin_reportsADuplicateIdAsAnError(com.group10.scheduler.panels.AdminPanelAITest) (142 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.adminLogin_unlocksRoomManagementAndNamesTheAdmin(com.group10.scheduler.panels.AdminPanelAITest) (144 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.adminLogin_trimsSurroundingWhitespaceFromTheTypedId(com.group10.scheduler.panels.AdminPanelAITest) (145 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_rejectsABlankCapacity(com.group10.scheduler.panels.AdminPanelAITest) (215 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.addRoom_rejectsANonNumericCapacityWithoutAddingAnything(com.group10.scheduler.panels.AdminPanelAITest) (219 ms)</li><li>com.group10.scheduler.panels.AdminPanelAITest.aFailedLoginAfterASuccessfulOneRelocksTheControls(com.group10.scheduler.panels.AdminPanelAITest) (430 ms)</li><li>com.group10.scheduler.facade.SchedulerFacadeAITest.generateAdministratorAccount_createsAnAdministrator(com.group10.scheduler.facade.SchedulerFacadeAITest) (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.25.5 <a href='https://github.com/sponsors/hcoles'>support</a>
+
+</body>
+</html>
