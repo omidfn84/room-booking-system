@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: ['21', '23']
+    name: Tests (Java ${{ matrix.java }})
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+
+      - name: Cache JUnit jars
+        uses: actions/cache@v4
+        with:
+          path: build/test-lib
+          key: test-lib-${{ hashFiles('scripts/test.sh') }}
+
+      # The Swing panel tests open real windows and dialogs, so give them a
+      # virtual display instead of running headless.
+      - name: Compile and run tests
+        run: xvfb-run --auto-servernum scripts/test.sh
