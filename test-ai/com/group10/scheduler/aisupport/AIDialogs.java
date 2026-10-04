@@ -5,6 +5,7 @@ import java.awt.Container;
 import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -31,11 +32,20 @@ import javax.swing.text.JTextComponent;
  * Every armed watcher is a daemon thread with its own deadline, so a dialog
  * that never appears cannot wedge the build; the test's own @Test(timeout)
  * catches that case and fails properly.
+ *
+ * Watchers belong to the test that armed them. Arming a new one retires any
+ * older watcher, and tests call {@link #disarmAll()} in @After. Without that, a
+ * watcher whose dialog never appeared would keep polling for up to 5 seconds
+ * and answer the NEXT test's dialog (e.g. a leftover cancelNext() cancelling a
+ * card form), which made the suite flaky on slower CI machines.
  */
 public final class AIDialogs {
 
     private static final long POLL_MS = 25;
     private static final long DEFAULT_TIMEOUT_MS = 5_000;
+
+    /** Bumped to retire every watcher armed before it. */
+    private static final AtomicInteger GENERATION = new AtomicInteger();
 
     private AIDialogs() {
     }
@@ -61,12 +71,24 @@ public final class AIDialogs {
         armCancel(DEFAULT_TIMEOUT_MS);
     }
 
+    /** Retires every armed watcher; call from @After so none leaks into the next test. */
+    public static void disarmAll() {
+        GENERATION.incrementAndGet();
+    }
+
     // ---------- implementation ----------
 
+    private static void start(Runnable body) {
+        Thread watcher = new Thread(body, "ai-dialog-watcher");
+        watcher.setDaemon(true);
+        watcher.start();
+    }
+
     private static void arm(List<String> values, boolean ok, long timeoutMs) {
-        Thread watcher = new Thread(() -> {
+        int generation = GENERATION.incrementAndGet();
+        start(() -> {
             for (String value : values) {
-                JDialog dialog = waitForDialog(timeoutMs);
+                JDialog dialog = waitForDialog(generation, timeoutMs);
                 if (dialog == null) {
                     return;
                 }
@@ -78,38 +100,35 @@ public final class AIDialogs {
                 }
                 waitForDialogToClose(dialog, timeoutMs);
             }
-        }, "ai-dialog-watcher");
-        watcher.setDaemon(true);
-        watcher.start();
+        });
     }
 
     private static void armFields(String[] fieldValues, long timeoutMs) {
-        Thread watcher = new Thread(() -> {
-            JDialog dialog = waitForDialog(timeoutMs);
+        int generation = GENERATION.incrementAndGet();
+        start(() -> {
+            JDialog dialog = waitForDialog(generation, timeoutMs);
             if (dialog == null) {
                 return;
             }
             typeInto(dialog, fieldValues);
             click(dialog, "OK");
-        }, "ai-dialog-watcher");
-        watcher.setDaemon(true);
-        watcher.start();
+        });
     }
 
     private static void armCancel(long timeoutMs) {
-        Thread watcher = new Thread(() -> {
-            JDialog dialog = waitForDialog(timeoutMs);
+        int generation = GENERATION.incrementAndGet();
+        start(() -> {
+            JDialog dialog = waitForDialog(generation, timeoutMs);
             if (dialog != null) {
                 click(dialog, "Cancel");
             }
-        }, "ai-dialog-watcher");
-        watcher.setDaemon(true);
-        watcher.start();
+        });
     }
 
-    private static JDialog waitForDialog(long timeoutMs) {
+    /** Returns null on timeout, or once a newer watcher (or disarmAll) has retired this one. */
+    private static JDialog waitForDialog(int generation, long timeoutMs) {
         long deadline = System.currentTimeMillis() + timeoutMs;
-        while (System.currentTimeMillis() < deadline) {
+        while (System.currentTimeMillis() < deadline && GENERATION.get() == generation) {
             for (Window window : Window.getWindows()) {
                 if (window instanceof JDialog && window.isVisible()) {
                     return (JDialog) window;

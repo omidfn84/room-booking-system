@@ -15,6 +15,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import org.junit.After;
 import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,6 +57,11 @@ public class BookingPanelAITest {
         fx.addRoom("R1");
         controller.onRegisterClicked("alice@yorku.ca", "Passw0rd!", "Alice", "STUDENT", "123456789");
         panel = new BookingPanel(controller);
+    }
+
+    @After
+    public void tearDown() {
+        AIDialogs.disarmAll();
     }
 
     /** Dialog-driven tests need a display; skip cleanly when there is none. */
