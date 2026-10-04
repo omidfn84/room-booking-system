@@ -6,14 +6,16 @@ import com.group10.scheduler.booking.BookingManager;
 import com.group10.scheduler.facade.SchedulerFacade;
 import com.group10.scheduler.gui.AdminController;
 import com.group10.scheduler.gui.GUIController;
-import com.group10.scheduler.persistence.csv.CsvBookingRepository;
-import com.group10.scheduler.persistence.csv.CsvPaymentRepository;
 import com.group10.scheduler.persistence.BookingRepository;
 import com.group10.scheduler.persistence.PaymentRepository;
 import com.group10.scheduler.persistence.RoomRepository;
 import com.group10.scheduler.persistence.UserRepository;
-import com.group10.scheduler.persistence.csv.CsvRoomRepository;
-import com.group10.scheduler.persistence.csv.CsvUserRepository;
+import com.group10.scheduler.persistence.sql.CsvToSqlMigration;
+import com.group10.scheduler.persistence.sql.SqliteBookingRepository;
+import com.group10.scheduler.persistence.sql.SqliteDatabase;
+import com.group10.scheduler.persistence.sql.SqlitePaymentRepository;
+import com.group10.scheduler.persistence.sql.SqliteRoomRepository;
+import com.group10.scheduler.persistence.sql.SqliteUserRepository;
 import com.group10.scheduler.room.RoomManager;
 
 import javax.swing.*;
@@ -59,20 +61,25 @@ public class MainUI extends JFrame {
     }
 
     /**
-     * Wires the CSV persistence layer (Adapter pattern), domain managers, and
+     * Wires the SQLite persistence layer (Adapter pattern), domain managers, and
      * Facade, then launches the GUI. This is the composition root — the only
-     * place in the app that mentions concrete CSV classes and file paths.
+     * place in the app that mentions concrete repository classes and file paths.
      */
     public static void main(String[] args) {
-        String dataDir = "data"; // relative to the working directory; contains the CSV files
-        new java.io.File(dataDir).mkdirs(); // FileWriter cannot create missing directories
+        String dataDir = "data"; // relative to the working directory; holds scheduler.db
+        new java.io.File(dataDir).mkdirs(); // SQLite cannot create missing directories
+
+        SqliteDatabase db = new SqliteDatabase(dataDir + "/scheduler.db");
+        RegisteredUserFactory userFactory = new RegisteredUserFactory();
+        // carry over data saved by older CSV-based versions of the app
+        CsvToSqlMigration.migrateIfNeeded(dataDir, db, userFactory);
 
         // program to the «Target» interfaces (Adapter pattern): the rest of the
-        // system never knows these are CSV-backed
-        RoomRepository roomRepo = new CsvRoomRepository(dataDir + "/rooms.csv");
-        BookingRepository bookingRepo = new CsvBookingRepository(dataDir + "/bookings.csv");
-        UserRepository userRepo = new CsvUserRepository(dataDir + "/users.csv", new RegisteredUserFactory());
-        PaymentRepository paymentRepo = new CsvPaymentRepository(dataDir + "/payments.csv");
+        // system never knows these are SQL-backed
+        RoomRepository roomRepo = new SqliteRoomRepository(db);
+        BookingRepository bookingRepo = new SqliteBookingRepository(db);
+        UserRepository userRepo = new SqliteUserRepository(db, userFactory);
+        PaymentRepository paymentRepo = new SqlitePaymentRepository(db);
 
         RoomManager roomManager = new RoomManager(roomRepo);
         BookingManager bookingManager = new BookingManager(bookingRepo, paymentRepo, roomManager);
