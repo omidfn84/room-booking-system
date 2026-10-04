@@ -32,8 +32,8 @@ public class AdminController {
 
     // ==================== CHIEF section (Req2) ====================
 
-    public Administrator onGenerateAdminClicked(String adminId, String name, String email) {
-        return facade.generateAdministratorAccount(adminId, name, email);
+    public Administrator onGenerateAdminClicked(String chiefPassword, String adminId, String name, String email) {
+        return facade.generateAdministratorAccount(chiefPassword, adminId, name, email);
     }
 
     // ================= ADMINISTRATOR section (Req6, Req7) =================

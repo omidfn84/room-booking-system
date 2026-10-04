@@ -73,7 +73,7 @@ public class CsvUserRepositoryAITest {
 
 		assertTrue(loaded instanceof Student);
 		assertEquals("student@yorku.ca", loaded.getEmail());
-		assertEquals("Strong1!", loaded.getPassword());
+		assertEquals("Strong1!", loaded.getPasswordHash());
 		assertEquals("STUDENT", loaded.getAccountType());
 		assertEquals("Student User", loaded.getUserName());
 		assertEquals(123456789L, loaded.getOrganizationId());

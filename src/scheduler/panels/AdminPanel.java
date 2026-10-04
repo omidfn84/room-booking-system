@@ -23,6 +23,7 @@ public class AdminPanel extends JPanel {
     private JTextField newAdminIdField = new JTextField(8);
     private JTextField newAdminNameField = new JTextField(10);
     private JTextField newAdminEmailField = new JTextField(12);
+    private JPasswordField chiefPasswordField = new JPasswordField(10);
 
     // admin session
     private JTextField adminLoginField = new JTextField(8);
@@ -64,6 +65,7 @@ public class AdminPanel extends JPanel {
         chiefForm.add(new JLabel("Admin ID:")); chiefForm.add(newAdminIdField);
         chiefForm.add(new JLabel("Name:")); chiefForm.add(newAdminNameField);
         chiefForm.add(new JLabel("Email:")); chiefForm.add(newAdminEmailField);
+        chiefForm.add(new JLabel("Chief password:")); chiefForm.add(chiefPasswordField);
         JButton generateBtn = new JButton("Generate admin");
         chiefForm.add(generateBtn);
         generateBtn.addActionListener(e -> handleGenerateAdmin());
@@ -139,17 +141,20 @@ public class AdminPanel extends JPanel {
     private void handleGenerateAdmin() {
         try {
             Administrator admin = controller.onGenerateAdminClicked(
+                    new String(chiefPasswordField.getPassword()),
                     newAdminIdField.getText().trim(),
                     newAdminNameField.getText().trim(),
                     newAdminEmailField.getText().trim());
             if (admin == null) {
-                setStatus("Admin ID already exists.", true);
+                setStatus("Admin ID is blank or already exists.", true);
             } else {
                 setStatus("Generated: " + admin, false);
                 adminLoginField.setText(newAdminIdField.getText().trim());
             }
         } catch (Exception ex) {
             setStatus("Error: " + ex.getMessage(), true);
+        } finally {
+            chiefPasswordField.setText(""); // never leave the chief password sitting in the form
         }
     }
 

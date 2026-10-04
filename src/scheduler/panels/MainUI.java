@@ -1,6 +1,7 @@
 package scheduler.panels;
 
 import scheduler.accounts.AccountManagement;
+import scheduler.accounts.ChiefEventCoordinator;
 import scheduler.accounts.RegisteredUserFactory;
 import scheduler.booking.BookingManager;
 import scheduler.facade.SchedulerFacade;
@@ -65,6 +66,26 @@ public class MainUI extends JFrame {
      * Facade, then launches the GUI. This is the composition root — the only
      * place in the app that mentions concrete repository classes and file paths.
      */
+    /**
+     * The chief password comes from the SCHEDULER_CHIEF_PASSWORD environment
+     * variable. If it is not set, a random one is generated for this run and
+     * printed to the console (administrators live in memory, so they only
+     * last for one run anyway).
+     */
+    private static void configureChiefPassword() {
+        if (ChiefEventCoordinator.getInstance().isCredentialConfigured()) {
+            return; // the chief is a Singleton: only the first start-up in this JVM sets it
+        }
+        String chiefPassword = System.getenv("SCHEDULER_CHIEF_PASSWORD");
+        if (chiefPassword == null || chiefPassword.isBlank()) {
+            byte[] bytes = new byte[9];
+            new java.security.SecureRandom().nextBytes(bytes);
+            chiefPassword = java.util.Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
+            System.out.println("SCHEDULER_CHIEF_PASSWORD is not set. Chief password for this run: " + chiefPassword);
+        }
+        ChiefEventCoordinator.getInstance().configureCredential(chiefPassword);
+    }
+
     public static void main(String[] args) {
         String dataDir = "data"; // relative to the working directory; holds scheduler.db
         new java.io.File(dataDir).mkdirs(); // SQLite cannot create missing directories
@@ -86,6 +107,7 @@ public class MainUI extends JFrame {
         AccountManagement accountManagement = new AccountManagement(userRepo);
 
         SchedulerFacade facade = new SchedulerFacade(roomManager, bookingManager, accountManagement);
+        configureChiefPassword();
 
         // Free win: the Nimbus look-and-feel ships with the JDK and instantly
         // modernizes every Swing component. Falls back silently if unavailable.

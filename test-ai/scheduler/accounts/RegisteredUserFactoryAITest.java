@@ -88,7 +88,7 @@ public class RegisteredUserFactoryAITest {
 				123456789L);
 
 		assertEquals("student@yorku.ca", user.getEmail());
-		assertEquals("Strong1!", user.getPassword());
+		assertEquals("Strong1!", user.getPasswordHash());
 		assertEquals("STUDENT", user.getAccountType());
 		assertEquals("Student User", user.getUserName());
 		assertEquals(123456789L, user.getOrganizationId());

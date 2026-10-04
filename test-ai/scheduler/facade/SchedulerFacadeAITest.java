@@ -45,7 +45,7 @@ public class SchedulerFacadeAITest {
     /** Registers an admin with the chief and returns its unique id. */
     private String newAdmin() {
         String id = AIFixture.uniqueAdminId();
-        assertNotNull(facade.generateAdministratorAccount(id, "Admin", "admin@yorku.ca"));
+        assertNotNull(facade.generateAdministratorAccount(AIFixture.chiefPassword(), id, "Admin", "admin@yorku.ca"));
         return id;
     }
 
@@ -79,7 +79,7 @@ public class SchedulerFacadeAITest {
     public void generateAdministratorAccount_createsAnAdministrator() {
         String id = AIFixture.uniqueAdminId();
 
-        Administrator admin = facade.generateAdministratorAccount(id, "Ada", "ada@yorku.ca");
+        Administrator admin = facade.generateAdministratorAccount(AIFixture.chiefPassword(), id, "Ada", "ada@yorku.ca");
 
         assertNotNull(admin);
         assertEquals(id, admin.getAdminId());
@@ -90,7 +90,7 @@ public class SchedulerFacadeAITest {
         String id = newAdmin();
 
         assertNull("The chief must not issue the same admin id twice",
-                facade.generateAdministratorAccount(id, "Someone Else", "else@yorku.ca"));
+                facade.generateAdministratorAccount(AIFixture.chiefPassword(), id, "Someone Else", "else@yorku.ca"));
     }
 
     @Test

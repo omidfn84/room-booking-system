@@ -21,10 +21,24 @@ public class AccountManagement {
 		this.userRepository = userRepository;
 		// rehydrate users that were validated when originally registered
 		registeredUsers.addAll(userRepository.loadUsers());
+		boolean upgraded = false;
 		for (RegisteredUser user : registeredUsers) {
 			registeredEmails.add(user.getEmail().toLowerCase());
+			// data saved by older versions holds plain-text passwords: hash them in place
+			String stored = user.getPasswordHash();
+			if (stored != null && !PasswordHasher.isHash(stored)) {
+				user.setPasswordHash(PasswordHasher.hash(stored));
+				upgraded = true;
+			}
+		}
+		if (upgraded) {
+			userRepository.saveUsers(registeredUsers);
 		}
 	}
+
+	// compared against when the email is unknown, so a failed login takes the
+	// same time whether or not the account exists
+	private static final String DUMMY_HASH = PasswordHasher.hash("not-a-real-password");
 	
 
 	// creating an enum for account types with flexibility of adding more types
@@ -167,13 +181,23 @@ public class AccountManagement {
 		validateAccount(email, password, accountType, userName, organizationId);
 		// safe: validateOrganizationId guarantees exactly 9 digits
 		long orgId = Long.parseLong(organizationId.trim());
-		RegisteredUser user= factory.createUser(email.trim().toLowerCase(), password, accountType.trim().toUpperCase(),
+		RegisteredUser user= factory.createUser(email.trim().toLowerCase(), PasswordHasher.hash(password), accountType.trim().toUpperCase(),
 				userName.trim(), orgId);
 		   registeredUsers.add(user);
 		   registeredEmails.add(email.trim().toLowerCase());
 		   userRepository.saveUsers(registeredUsers);
 		   return user;
 	}
+	/** Returns the user if the email exists and the password matches its stored hash, otherwise null. */
+	public RegisteredUser authenticate(String email, String password) {
+		RegisteredUser user = findByEmail(email);
+		if (user == null) {
+			PasswordHasher.verify(password == null ? "" : password, DUMMY_HASH);
+			return null;
+		}
+		return PasswordHasher.verify(password, user.getPasswordHash()) ? user : null;
+	}
+
 	//Finding the user by email
 	public RegisteredUser findByEmail(String email) {
 

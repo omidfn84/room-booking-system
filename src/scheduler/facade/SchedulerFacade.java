@@ -31,10 +31,7 @@ public class SchedulerFacade {
 	}
 
 	public RegisteredUser login(String email, String password) {
-		RegisteredUser user = accountManagement.findByEmail(email);
-		if (user != null && user.getPassword().equals(password))
-			return user;
-		return null;
+		return accountManagement.authenticate(email, password);
 	}
 
 	public List<Room> getBookableRooms(String start, String end) {
@@ -107,8 +104,8 @@ public class SchedulerFacade {
 	}
 
 	//Creating admins by using chief singleton (the chief keeps the registry)
-	public Administrator generateAdministratorAccount(String adminId, String name, String email) {
-	    return ChiefEventCoordinator.getInstance().generateAdministratorAccount(adminId, name, email, roomManager);
+	public Administrator generateAdministratorAccount(String chiefPassword, String adminId, String name, String email) {
+	    return ChiefEventCoordinator.getInstance().generateAdministratorAccount(chiefPassword, adminId, name, email, roomManager);
 	}
 
 	// read-only views for the GUI (safe: managers hand out defensive copies)

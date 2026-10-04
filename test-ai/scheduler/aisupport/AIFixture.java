@@ -5,6 +5,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import scheduler.accounts.AccountManagement;
+import scheduler.accounts.ChiefEventCoordinator;
 import scheduler.booking.BookingManager;
 import scheduler.facade.SchedulerFacade;
 import scheduler.room.Room;
@@ -101,6 +102,15 @@ public final class AIFixture {
     }
 
     /** An id no other test has used, so the Singleton's registry cannot collide. */
+    /** Shared test chief password (same value as test/'s TestChief, since the chief is a JVM-wide Singleton). */
+    public static synchronized String chiefPassword() {
+        ChiefEventCoordinator chief = ChiefEventCoordinator.getInstance();
+        if (!chief.isCredentialConfigured()) {
+            chief.configureCredential("Chief-Test-Pass1!");
+        }
+        return "Chief-Test-Pass1!";
+    }
+
     public static String uniqueAdminId() {
         return "AI-ADMIN-" + ADMIN_SEQ.incrementAndGet() + "-" + System.nanoTime();
     }

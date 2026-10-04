@@ -92,7 +92,7 @@ public class CsvUserRepository implements UserRepository {
             for (RegisteredUser u : users) {
                 writer.write(u.getAccountType());
                 writer.write(u.getEmail());
-                writer.write(u.getPassword());
+                writer.write(u.getPasswordHash());
                 writer.write(u.getUserName());
                 writer.write(String.valueOf(u.getOrganizationId()));
                 writer.endRecord();

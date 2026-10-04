@@ -35,7 +35,7 @@ public class AdminControllerAITest {
     /** Generates an admin with a fresh id and logs in as it. */
     private String loginAsNewAdmin() {
         String id = AIFixture.uniqueAdminId();
-        assertNotNull(controller.onGenerateAdminClicked(id, "Ada", "ada@yorku.ca"));
+        assertNotNull(controller.onGenerateAdminClicked(AIFixture.chiefPassword(), id, "Ada", "ada@yorku.ca"));
         assertTrue(controller.onAdminLoginClicked(id));
         return id;
     }
@@ -46,7 +46,7 @@ public class AdminControllerAITest {
     public void onGenerateAdminClicked_createsAnAdministrator() {
         String id = AIFixture.uniqueAdminId();
 
-        Administrator admin = controller.onGenerateAdminClicked(id, "Ada", "ada@yorku.ca");
+        Administrator admin = controller.onGenerateAdminClicked(AIFixture.chiefPassword(), id, "Ada", "ada@yorku.ca");
 
         assertNotNull(admin);
         assertEquals(id, admin.getAdminId());
@@ -59,9 +59,9 @@ public class AdminControllerAITest {
         // AdminPanel shows "Admin ID already exists." on null, so the null is
         // the contract rather than an exception.
         String id = AIFixture.uniqueAdminId();
-        controller.onGenerateAdminClicked(id, "Ada", "ada@yorku.ca");
+        controller.onGenerateAdminClicked(AIFixture.chiefPassword(), id, "Ada", "ada@yorku.ca");
 
-        assertNull(controller.onGenerateAdminClicked(id, "Imposter", "imposter@yorku.ca"));
+        assertNull(controller.onGenerateAdminClicked(AIFixture.chiefPassword(), id, "Imposter", "imposter@yorku.ca"));
     }
 
     @Test
@@ -69,7 +69,7 @@ public class AdminControllerAITest {
         // Generating admins is the chief's act, not an administrator's.
         assertFalse(controller.isAdminLoggedIn());
 
-        assertNotNull(controller.onGenerateAdminClicked(AIFixture.uniqueAdminId(), "Ada", "ada@yorku.ca"));
+        assertNotNull(controller.onGenerateAdminClicked(AIFixture.chiefPassword(), AIFixture.uniqueAdminId(), "Ada", "ada@yorku.ca"));
     }
 
     // ==================== admin session ====================
@@ -83,7 +83,7 @@ public class AdminControllerAITest {
     @Test
     public void onAdminLoginClicked_opensASessionForAnIdTheChiefIssued() {
         String id = AIFixture.uniqueAdminId();
-        controller.onGenerateAdminClicked(id, "Ada", "ada@yorku.ca");
+        controller.onGenerateAdminClicked(AIFixture.chiefPassword(), id, "Ada", "ada@yorku.ca");
 
         assertTrue(controller.onAdminLoginClicked(id));
         assertTrue(controller.isAdminLoggedIn());
@@ -122,7 +122,7 @@ public class AdminControllerAITest {
     public void anAdminCanSwitchToAnotherAdminId() {
         loginAsNewAdmin();
         String second = AIFixture.uniqueAdminId();
-        controller.onGenerateAdminClicked(second, "Bob", "bob@yorku.ca");
+        controller.onGenerateAdminClicked(AIFixture.chiefPassword(), second, "Bob", "bob@yorku.ca");
 
         assertTrue(controller.onAdminLoginClicked(second));
         assertEquals(second, controller.getCurrentAdminId());

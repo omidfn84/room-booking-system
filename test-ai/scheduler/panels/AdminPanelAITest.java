@@ -87,6 +87,7 @@ public class AdminPanelAITest {
         this.<JTextField>field("newAdminIdField").setText(id);
         this.<JTextField>field("newAdminNameField").setText("Ada");
         this.<JTextField>field("newAdminEmailField").setText("ada@yorku.ca");
+        this.<JTextField>field("chiefPasswordField").setText(AIFixture.chiefPassword());
         button("Generate admin").doClick();
         return id;
     }
@@ -180,9 +181,10 @@ public class AdminPanelAITest {
         this.<JTextField>field("newAdminIdField").setText(id);
         this.<JTextField>field("newAdminNameField").setText("Imposter");
         this.<JTextField>field("newAdminEmailField").setText("imposter@yorku.ca");
+        this.<JTextField>field("chiefPasswordField").setText(AIFixture.chiefPassword());
         button("Generate admin").doClick();
 
-        assertEquals("Admin ID already exists.", status());
+        assertEquals("Admin ID is blank or already exists.", status());
     }
 
     @Test
@@ -195,31 +197,37 @@ public class AdminPanelAITest {
     }
 
     @Test
-    public void generateAdmin_currentlyACCEPTSAblankId_knownGapInTheAccountsPackage() throws Exception {
-        // CHARACTERISATION TEST - documents current behaviour, not desired
-        // behaviour. This assertion was originally written the other way
-        // round (expecting a blank id to be refused) and it FAILED.
-        //
-        // Root cause: ChiefEventCoordinator.generateAdministratorAccount()
-        // guards only `adminId == null`, never isBlank(), so "" becomes a
-        // usable administrator id and an admin can then "log in" with an
-        // empty field. Compare AccountManagement, which does reject blank
-        // input for regular users - the chief is simply less strict.
-        //
-        // ChiefEventCoordinator lives in the accounts package, which is
-        // owned by another team member, so the production fix is raised as a
-        // finding rather than made here. This test is deliberately written
-        // against today's behaviour so the suite stays green; when the guard
-        // is tightened to `adminId == null || adminId.isBlank()` this test
-        // will fail loudly and should then be inverted.
+    public void generateAdmin_refusesABlankId() throws Exception {
+        // Formerly a characterisation test documenting a known gap: the chief
+        // only guarded `adminId == null`, so "" became a usable administrator
+        // id that could then open an admin session. The guard now also rejects
+        // blank ids, so this test was inverted as its original note asked.
         this.<JTextField>field("newAdminIdField").setText("");
         this.<JTextField>field("newAdminNameField").setText("Nobody");
         this.<JTextField>field("newAdminEmailField").setText("nobody@yorku.ca");
+        this.<JTextField>field("chiefPasswordField").setText(AIFixture.chiefPassword());
 
         button("Generate admin").doClick();
 
-        assertTrue("Known gap: a blank admin id is currently accepted", status().startsWith("Generated:"));
-        assertTrue("...and it can then be used to open an admin session", controller.onAdminLoginClicked(""));
+        assertEquals("Admin ID is blank or already exists.", status());
+        assertFalse("a blank id must not open an admin session", controller.onAdminLoginClicked(""));
+    }
+
+    @Test
+    public void generateAdmin_refusesAWrongChiefPassword() throws Exception {
+        String id = AIFixture.uniqueAdminId();
+        AIFixture.chiefPassword(); // make sure the chief is configured
+        this.<JTextField>field("newAdminIdField").setText(id);
+        this.<JTextField>field("newAdminNameField").setText("Mallory");
+        this.<JTextField>field("newAdminEmailField").setText("mallory@yorku.ca");
+        this.<JTextField>field("chiefPasswordField").setText("wrong-password");
+
+        button("Generate admin").doClick();
+
+        assertEquals("Error: Incorrect chief password.", status());
+        assertFalse(controller.onAdminLoginClicked(id));
+        assertEquals("the password field is cleared after every attempt", "",
+                new String(this.<javax.swing.JPasswordField>field("chiefPasswordField").getPassword()));
     }
 
     // ==================== admin session ====================

@@ -61,3 +61,8 @@ local.properties
 build/
 data/
 .DS_Store
+
+# IDE project files and local tooling (kept on disk, not in git)
+.idea/
+*.iml
+pit-lib/

@@ -1,5 +1,7 @@
 package scheduler.gui;
 
+import scheduler.accounts.TestChief;
+
 import static org.junit.Assert.*;
 import org.junit.*;
 
@@ -29,7 +31,7 @@ public class AdminControllerTest{
 
     @Test
     public void generateAdmin (){
-        Administrator admin= controller.onGenerateAdminClicked ("gui-admin-1", "Alice Admin", "alice.admin@yorku.ca");
+        Administrator admin= controller.onGenerateAdminClicked (TestChief.password (), "gui-admin-1", "Alice Admin", "alice.admin@yorku.ca");
         assertNotNull (admin);
     }
 
@@ -40,7 +42,7 @@ public class AdminControllerTest{
 
     @Test
     public void adminLogin (){
-        controller.onGenerateAdminClicked ("gui-admin-2", "Bob Admin", "bob.admin@yorku.ca");
+        controller.onGenerateAdminClicked (TestChief.password (), "gui-admin-2", "Bob Admin", "bob.admin@yorku.ca");
         assertTrue (controller.onAdminLoginClicked ("gui-admin-2"));
         assertTrue (controller.isAdminLoggedIn ());
         assertEquals ("gui-admin-2", controller.getCurrentAdminId ());
@@ -54,7 +56,7 @@ public class AdminControllerTest{
 
     @Test
     public void adminLogout (){
-        controller.onGenerateAdminClicked ("gui-admin-3", "Carl Admin", "carl.admin@yorku.ca");
+        controller.onGenerateAdminClicked (TestChief.password (), "gui-admin-3", "Carl Admin", "carl.admin@yorku.ca");
         controller.onAdminLoginClicked ("gui-admin-3");
         controller.onAdminLogoutClicked ();
         assertFalse (controller.isAdminLoggedIn ());
@@ -68,7 +70,7 @@ public class AdminControllerTest{
 
     @Test
     public void addRoom (){
-        controller.onGenerateAdminClicked ("gui-admin-4", "Dan Admin", "dan.admin@yorku.ca");
+        controller.onGenerateAdminClicked (TestChief.password (), "gui-admin-4", "Dan Admin", "dan.admin@yorku.ca");
         controller.onAdminLoginClicked ("gui-admin-4");
         assertTrue (controller.onAddRoomClicked ("R1", 10, "Bergeron", "100"));
         assertEquals (1, controller.getAllRooms ().size ());
@@ -81,7 +83,7 @@ public class AdminControllerTest{
 
     @Test
     public void enableRoom (){
-        controller.onGenerateAdminClicked ("gui-admin-5", "Eve Admin", "eve.admin@yorku.ca");
+        controller.onGenerateAdminClicked (TestChief.password (), "gui-admin-5", "Eve Admin", "eve.admin@yorku.ca");
         controller.onAdminLoginClicked ("gui-admin-5");
         controller.onAddRoomClicked ("R2", 5, "Ross", "200");
         assertTrue (controller.onDisableRoomClicked ("R2"));
@@ -100,7 +102,7 @@ public class AdminControllerTest{
 
     @Test
     public void closeRoom (){
-        controller.onGenerateAdminClicked ("gui-admin-6", "Frank Admin", "frank.admin@yorku.ca");
+        controller.onGenerateAdminClicked (TestChief.password (), "gui-admin-6", "Frank Admin", "frank.admin@yorku.ca");
         controller.onAdminLoginClicked ("gui-admin-6");
         controller.onAddRoomClicked ("R3", 8, "Bergeron", "300");
         assertTrue (controller.onCloseRoomClicked ("R3"));
