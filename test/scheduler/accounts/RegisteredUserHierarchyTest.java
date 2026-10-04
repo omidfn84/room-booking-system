@@ -30,7 +30,7 @@ public class RegisteredUserHierarchyTest{
     public void constructorFields (){
         Student s= new Student ("alice@yorku.ca", "Passw0rd!", "STUDENT", "Alice Smith", 987654321L);
         assertEquals ("alice@yorku.ca", s.getEmail ());
-        assertEquals ("Passw0rd!", s.getPassword ());
+        assertEquals ("Passw0rd!", s.getPasswordHash ());
         assertEquals ("STUDENT", s.getAccountType ());
         assertEquals ("Alice Smith", s.getUserName ());
         assertEquals (987654321L, s.getOrganizationId ());

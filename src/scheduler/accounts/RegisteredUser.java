@@ -4,24 +4,31 @@ public abstract class RegisteredUser {
 	// Attributes are protected to protect data integrity; getter methods provide
 	// controlled access.
 	private String email;
-	private String password;
+	// never the plain-text password: a PasswordHasher hash (see AccountManagement)
+	private String passwordHash;
 	private String userName;
 	protected String accountType;
 	private long organizationId;
 
 	// constructor
-	public RegisteredUser(String email, String password, String accountType, String userName,  long organizationId) {
+	public RegisteredUser(String email, String passwordHash, String accountType, String userName,  long organizationId) {
 
 		this.email = email;
-		this.password = password;
+		this.passwordHash = passwordHash;
 		this.accountType = accountType;
 		this.userName = userName;
 		this.organizationId = organizationId;
 	}
 	// getter methods
 	
-	public String getPassword() {
-		return password; }
+	public String getPasswordHash() {
+		return passwordHash;
+	}
+
+	// package-private: only AccountManagement may replace a stored hash
+	void setPasswordHash(String passwordHash) {
+		this.passwordHash = passwordHash;
+	}
 
 	public String getEmail() {
 		return email;

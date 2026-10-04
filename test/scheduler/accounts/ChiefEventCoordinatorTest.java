@@ -18,31 +18,31 @@ public class ChiefEventCoordinatorTest{
     @Test
     public void generateAdministrator (){
         ChiefEventCoordinator chief= ChiefEventCoordinator.getInstance ();
-        Administrator admin= chief.generateAdministratorAccount ("admin-unique-1", "Alice Admin", "alice.admin@yorku.ca", roomManager);
+        Administrator admin= chief.generateAdministratorAccount (TestChief.password (), "admin-unique-1", "Alice Admin", "alice.admin@yorku.ca", roomManager);
         assertNotNull (admin);
         assertEquals ("admin-unique-1", admin.getAdminId ());
     }
     @Test
     public void duplicateAdmin (){
         ChiefEventCoordinator chief= ChiefEventCoordinator.getInstance ();
-        chief.generateAdministratorAccount ("admin-unique-2", "Bob", "bob@yorku.ca", roomManager);
-        Administrator second= chief.generateAdministratorAccount ("admin-unique-2", "Bob2", "bob2@yorku.ca", roomManager);
+        chief.generateAdministratorAccount (TestChief.password (), "admin-unique-2", "Bob", "bob@yorku.ca", roomManager);
+        Administrator second= chief.generateAdministratorAccount (TestChief.password (), "admin-unique-2", "Bob2", "bob2@yorku.ca", roomManager);
         assertNull (second);
     }
     @Test (expected= IllegalStateException.class)
     public void nullRoomManager (){
         ChiefEventCoordinator chief= ChiefEventCoordinator.getInstance ();
-        chief.generateAdministratorAccount ("admin-unique-3", "Carl", "carl@yorku.ca", null);
+        chief.generateAdministratorAccount (TestChief.password (), "admin-unique-3", "Carl", "carl@yorku.ca", null);
     }
     @Test
     public void nullAdmin (){
         ChiefEventCoordinator chief= ChiefEventCoordinator.getInstance ();
-        assertNull (chief.generateAdministratorAccount (null, "Dan", "dan@yorku.ca", roomManager));
+        assertNull (chief.generateAdministratorAccount (TestChief.password (), null, "Dan", "dan@yorku.ca", roomManager));
     }
     @Test
     public void createdAdministrator (){
         ChiefEventCoordinator chief= ChiefEventCoordinator.getInstance ();
-        Administrator created= chief.generateAdministratorAccount ("admin-unique-4", "Eve", "eve@yorku.ca", roomManager);
+        Administrator created= chief.generateAdministratorAccount (TestChief.password (), "admin-unique-4", "Eve", "eve@yorku.ca", roomManager);
         Administrator found= chief.findExistingAdministrator ("admin-unique-4");
         assertSame (created, found);
     }
@@ -59,15 +59,15 @@ public class ChiefEventCoordinatorTest{
     @Test
     public void generatedAdminIsOk (){
         ChiefEventCoordinator chief= ChiefEventCoordinator.getInstance ();
-        Administrator admin= chief.generateAdministratorAccount ("admin-unique-5", "Frank", "frank@yorku.ca", roomManager);
+        Administrator admin= chief.generateAdministratorAccount (TestChief.password (), "admin-unique-5", "Frank", "frank@yorku.ca", roomManager);
         assertEquals ("Frank", admin.getName ());
         assertEquals ("frank@yorku.ca", admin.getEmail ());
     }
     @Test
     public void differentAdmins (){
         ChiefEventCoordinator chief= ChiefEventCoordinator.getInstance ();
-        Administrator first= chief.generateAdministratorAccount ("admin-unique-6", "George", "george@yorku.ca", roomManager);
-        Administrator second= chief.generateAdministratorAccount ("admin-unique-7", "Helen", "helen@yorku.ca", roomManager);
+        Administrator first= chief.generateAdministratorAccount (TestChief.password (), "admin-unique-6", "George", "george@yorku.ca", roomManager);
+        Administrator second= chief.generateAdministratorAccount (TestChief.password (), "admin-unique-7", "Helen", "helen@yorku.ca", roomManager);
         assertNotSame (first, second);
     }
 }

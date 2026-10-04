@@ -1,6 +1,6 @@
 # AI-Assistant Generated Test Suite (`test-ai/`)
 
-DeliThis folder holds the test cases produced with an AI assistant, kept separate from the manually written suite in test/ so that each can be measured on its own.
+This folder holds the test cases produced with an AI assistant, kept separate from the manually written suite in test/ so that each can be measured on its own.
 
 ## Scope
 
@@ -8,18 +8,19 @@ This suite covers the packages assigned to this team member:
 
 | Package | Covered here |
 |---|---|
-| `com.group10.scheduler.booking` | yes |
-| `com.group10.scheduler.room` | yes |
-| `com.group10.scheduler.facade` | yes |
-| `com.group10.scheduler.gui` | yes |
-| `com.group10.scheduler.panels` | yes |
-| `com.group10.scheduler.accounts` | no — other team member |
-| `com.group10.scheduler.persistence` / `.csv` | no — other team member |
-| `com.group10.scheduler.demo` | no — demo drivers, not under test |
+| `scheduler.booking` | yes |
+| `scheduler.room` | yes |
+| `scheduler.facade` | yes |
+| `scheduler.gui` | yes |
+| `scheduler.panels` | yes |
+| `scheduler.accounts` | no — other team member |
+| `scheduler.persistence` / `.csv` | no — other team member |
 
 ## Results
 
-322 tests, all passing. Measured with JaCoCo over the five packages above.
+322 tests, all passing, when the suite was submitted. Measured with JaCoCo over
+the five packages above. (The suite has grown a little since; CI runs it on
+every push, see below.)
 
 | Package | Line coverage |
 |---|---|
@@ -61,8 +62,14 @@ up automatically after a refresh (F5).
   (requires the EclEmma plugin, which ships with recent Eclipse). The Coverage
   view then shows the per-package percentages used in the report.
 
-A pre-generated JaCoCo HTML report is also checked in at
-`coverage-reports/ai-assistant/index.html` if you would rather screenshot that.
+## How to run from a terminal / CI
+
+```bash
+scripts/test.sh test-ai
+```
+
+`scripts/test.sh` with no arguments runs this suite together with `test/`;
+that is exactly what the GitHub Actions workflow runs, under a virtual display.
 
 ## Note on the GUI tests
 
@@ -72,6 +79,7 @@ open a modal `JOptionPane`. They are guarded with JUnit's `Assume`, so:
 
 - run from Eclipse on a normal desktop → they execute
 - run on a headless server → they skip cleanly instead of failing
+- run in CI → they execute under `xvfb-run`
 
 `AIDialogs` is the helper that makes the modal handlers testable: it arms a
 background watcher before the button is clicked, then fills in and dismisses
@@ -82,7 +90,7 @@ since the manual suite deliberately skips those four handlers.
 ## Support classes
 
 - `aisupport/AIFakes` — in-memory doubles for the four repository interfaces,
-  so no test touches a real CSV file
+  so no test touches a real database or CSV file
 - `aisupport/AIFixture` — builds a fully wired system (real managers, fake
   repositories), plus time helpers and unique admin ids for the
   `ChiefEventCoordinator` Singleton

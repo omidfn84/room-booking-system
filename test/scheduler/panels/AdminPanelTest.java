@@ -1,5 +1,7 @@
 package scheduler.panels;
 
+import scheduler.accounts.TestChief;
+
 import static org.junit.Assert.*;
 import org.junit.*;
 import javax.swing.*;
@@ -61,7 +63,7 @@ public class AdminPanelTest{
         ((JButton) getField ("adminLoginBtn")).doClick ();
     }
     private void login (String adminId) throws Exception{
-        controller.onGenerateAdminClicked (adminId, "Test Admin", adminId + "@yorku.ca");
+        controller.onGenerateAdminClicked (TestChief.password (), adminId, "Test Admin", adminId + "@yorku.ca");
         Text ("adminLoginField", adminId);
         loginAdmin ();
     }
@@ -83,6 +85,7 @@ public class AdminPanelTest{
         Text ("newAdminIdField", "panel-admin-1");
         Text ("newAdminNameField", "Alice Admin");
         Text ("newAdminEmailField", "alice.admin@yorku.ca");
+        Text ("chiefPasswordField", TestChief.password ());
         generateAdmin ();
         JTextField loginField= getField ("adminLoginField");
         JLabel statusLabel= getField ("statusLabel");
@@ -91,13 +94,14 @@ public class AdminPanelTest{
     }
     @Test
     public void generateAdminForError () throws Exception{
-        controller.onGenerateAdminClicked ("panel-admin-2", "Bob", "bob@yorku.ca");
+        controller.onGenerateAdminClicked (TestChief.password (), "panel-admin-2", "Bob", "bob@yorku.ca");
         Text ("newAdminIdField", "panel-admin-2");
         Text ("newAdminNameField", "Bob Two");
         Text ("newAdminEmailField", "bob2@yorku.ca");
+        Text ("chiefPasswordField", TestChief.password ());
         generateAdmin ();
         JLabel statusLabel= getField ("statusLabel");
-        assertEquals ("Admin ID already exists.", statusLabel.getText ());
+        assertEquals ("Admin ID is blank or already exists.", statusLabel.getText ());
     }
     @Test
     public void adminLoginRoomManagement () throws Exception{

@@ -4,7 +4,7 @@
 
 A desktop application for booking conference rooms, built in Java with a Swing GUI and SQLite persistence. It started as a 6-person team project for a software design course, and I've since extended it (SQLite migration, CI). My own contributions are listed [below](#my-contributions).
 
-**6 design patterns** · **769 automated tests, 97.1% line coverage** · **Swing GUI, SQLite, CI on every push**
+**6 design patterns** · **783 automated tests, 97.1% line coverage** · **Swing GUI, SQLite, CI on every push**
 
 ---
 
@@ -41,6 +41,12 @@ Each layer only talks to the one below it. The GUI never touches the managers, a
 | **Strategy** | `Payment` + `ConcreteStrategies` | Each payment method validates and processes itself; `Payment` never branches on which one it holds |
 | **Adapter** | `SqliteXxxRepository` / `CsvXxxRepository` | Wraps JDBC/SQLite (and the legacy CSV library) behind repository interfaces. Moving from CSV to SQL meant writing new adapters and changing the wiring in `MainUI.main()`; the domain classes were not touched |
 
+## Security
+
+- **Passwords are never stored in plain text.** `PasswordHasher` uses salted PBKDF2-HMAC-SHA512 (210,000 iterations, built into the JDK), and login compares hashes in constant time. A failed login takes the same time whether or not the email exists. Plain-text passwords left by older versions are hashed automatically on start-up.
+- **Creating an administrator requires the chief password.** The Singleton guarantees there is one chief, and the password proves the person using it *is* the chief. It is set once at start-up from `SCHEDULER_CHIEF_PASSWORD`. If that is not set, a random one is generated and printed to the console. Only its hash is kept in memory, and it cannot be changed while the app runs.
+- **Known limits (it is a course project):** administrator accounts live in memory and log in with their admin ID alone, and the database file itself is not encrypted.
+
 ## Tech stack
 
 - **Java 21+** with **Swing**
@@ -54,9 +60,9 @@ Two suites, run together by CI and measured against all production code in `src/
 
 | Suite | Tests | Line coverage | Branch coverage |
 |---|---|---|---|
-| Core (`test/`), hand-written | 348 | 88.4% | 76.2% |
-| AI-assisted (`test-ai/`) | 421 | 88.2% | 86.6% |
-| **Combined** | **769** | **97.1%** | **91.5%** |
+| Core (`test/`), hand-written | 361 | 88.4% | 76.2% |
+| AI-assisted (`test-ai/`) | 422 | 88.2% | 86.6% |
+| **Combined** | **783** | **97.1%** | **91.5%** |
 
 - The booking state machine and every payment strategy's validation rules are covered case by case
 - Domain and GUI tests run against in-memory repository fakes; the persistence adapters are tested against temporary files and databases; the `MainUI` start-up tests run the real wiring end to end
@@ -76,7 +82,7 @@ The rest of the system (the account hierarchy and factory, the booking and payme
 ## Project structure
 
 ```
-src/com/group10/scheduler/
+src/scheduler/
   accounts/      → user hierarchy, account management, admin / chief coordinator
   booking/       → Booking, Payment, the State and Strategy patterns
   room/          → Room, RoomManager, simulated sensor system
@@ -100,10 +106,18 @@ From a terminal, in the project folder:
 ```bash
 mkdir -p build/classes                                    # output folder for compiled classes
 javac -d build/classes -cp "lib/*" $(find src -name '*.java')   # compile all source files, with the jars in lib/ on the classpath
-java --enable-native-access=ALL-UNNAMED -cp "build/classes:lib/*" com.group10.scheduler.panels.MainUI   # launch the app (the flag silences a SQLite warning on newer Java)
+java --enable-native-access=ALL-UNNAMED -cp "build/classes:lib/*" scheduler.panels.MainUI   # launch the app (the flag silences a SQLite warning on newer Java)
 ```
 
 Or open the folder in Eclipse or IntelliJ, mark `src` as the sources root, and run `MainUI.java`.
+
+To generate administrators you need the chief password. Choose your own by setting an environment variable before launching:
+
+```bash
+export SCHEDULER_CHIEF_PASSWORD='choose-a-strong-password'
+```
+
+If it isn't set, the app prints a one-time chief password to the console at start-up.
 
 The app creates `data/scheduler.db` on first launch. If an old `data/` folder still has `rooms.csv`, `users.csv`, `bookings.csv`, or `payments.csv`, they are imported once, automatically.
 

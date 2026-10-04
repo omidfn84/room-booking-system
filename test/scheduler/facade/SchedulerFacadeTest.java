@@ -1,5 +1,7 @@
 package scheduler.facade;
 
+import scheduler.accounts.TestChief;
+
 import static org.junit.Assert.*;
 import org.junit.*;
 
@@ -143,13 +145,13 @@ public class SchedulerFacadeTest{
 
     @Test
     public void generateAdmin (){
-        Administrator admin= facade.generateAdministratorAccount ("facade-admin-1", "Alice Admin", "alice.admin@yorku.ca");
+        Administrator admin= facade.generateAdministratorAccount (TestChief.password (), "facade-admin-1", "Alice Admin", "alice.admin@yorku.ca");
         assertNotNull (admin);
     }
 
     @Test
     public void administratorFound (){
-        facade.generateAdministratorAccount ("facade-admin-2", "Bob Admin", "bob.admin@yorku.ca");
+        facade.generateAdministratorAccount (TestChief.password (), "facade-admin-2", "Bob Admin", "bob.admin@yorku.ca");
         assertTrue (facade.isAdministrator ("facade-admin-2"));
     }
 
@@ -160,7 +162,7 @@ public class SchedulerFacadeTest{
 
     @Test
     public void addRoom (){
-        facade.generateAdministratorAccount ("facade-admin-3", "Carl Admin", "carl.admin@yorku.ca");
+        facade.generateAdministratorAccount (TestChief.password (), "facade-admin-3", "Carl Admin", "carl.admin@yorku.ca");
         Room newRoom= new Room ("R2", 5, "Ross", "200", RoomStatus.AVAILABLE);
         assertTrue (facade.addRoom ("facade-admin-3", newRoom));
     }
@@ -173,7 +175,7 @@ public class SchedulerFacadeTest{
 
     @Test
     public void enableRoom (){
-        facade.generateAdministratorAccount ("facade-admin-4", "Dan Admin", "dan.admin@yorku.ca");
+        facade.generateAdministratorAccount (TestChief.password (), "facade-admin-4", "Dan Admin", "dan.admin@yorku.ca");
         roomManager.disableRoom ("R1");
         assertTrue (facade.enableRoom ("facade-admin-4", "R1"));
     }
@@ -185,13 +187,13 @@ public class SchedulerFacadeTest{
 
     @Test
     public void disableRoom (){
-        facade.generateAdministratorAccount ("facade-admin-5", "Eve Admin", "eve.admin@yorku.ca");
+        facade.generateAdministratorAccount (TestChief.password (), "facade-admin-5", "Eve Admin", "eve.admin@yorku.ca");
         assertTrue (facade.disableRoom ("facade-admin-5", "R1"));
     }
 
     @Test
     public void closeRoom (){
-        facade.generateAdministratorAccount ("facade-admin-6", "Frank Admin", "frank.admin@yorku.ca");
+        facade.generateAdministratorAccount (TestChief.password (), "facade-admin-6", "Frank Admin", "frank.admin@yorku.ca");
         assertTrue (facade.closeRoom ("facade-admin-6", "R1"));
     }
 

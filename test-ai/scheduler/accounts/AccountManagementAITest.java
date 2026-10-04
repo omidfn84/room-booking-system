@@ -33,7 +33,8 @@ public class AccountManagementAITest {
 		assertNotNull(user);
 		assertTrue(user instanceof Student);
 		assertEquals("student@yorku.ca", user.getEmail());
-		assertEquals("Strong1!", user.getPassword());
+		assertNotEquals("Strong1!", user.getPasswordHash()); // stored hashed, never as plain text
+		assertTrue(PasswordHasher.verify("Strong1!", user.getPasswordHash()));
 		assertEquals("STUDENT", user.getAccountType());
 		assertEquals("Melika", user.getUserName());
 		assertEquals(123456789L, user.getOrganizationId());

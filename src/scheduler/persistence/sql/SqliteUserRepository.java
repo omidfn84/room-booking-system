@@ -61,7 +61,7 @@ public class SqliteUserRepository implements UserRepository {
                 for (RegisteredUser u : users) {
                     ps.setString(1, u.getAccountType());
                     ps.setString(2, u.getEmail());
-                    ps.setString(3, u.getPassword());
+                    ps.setString(3, u.getPasswordHash());
                     ps.setString(4, u.getUserName());
                     ps.setLong(5, u.getOrganizationId());
                     ps.addBatch();

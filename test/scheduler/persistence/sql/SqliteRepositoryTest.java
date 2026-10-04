@@ -112,7 +112,7 @@ public class SqliteRepositoryTest{
         RegisteredUser reloaded= loaded.get (0);
         assertTrue (reloaded instanceof Student);
         assertEquals ("alice@yorku.ca", reloaded.getEmail ());
-        assertEquals ("Passw0rd!", reloaded.getPassword ());
+        assertEquals ("Passw0rd!", reloaded.getPasswordHash ());
         assertEquals ("Alice", reloaded.getUserName ());
         assertEquals (123456789L, reloaded.getOrganizationId ());
     }
