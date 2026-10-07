@@ -1,14 +1,10 @@
 package scheduler.panels;
 
-import scheduler.accounts.TestChief;
-
-import static org.junit.Assert.*;
-import org.junit.*;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.lang.reflect.*;
+import org.junit.Before;
+import org.junit.Test;
 import scheduler.accounts.AccountManagement;
 import scheduler.accounts.FakeUserRepository;
+import scheduler.accounts.TestChief;
 import scheduler.booking.BookingManager;
 import scheduler.booking.FakeBookingRepository;
 import scheduler.booking.FakePaymentRepository;
@@ -17,6 +13,13 @@ import scheduler.gui.AdminController;
 import scheduler.room.FakeRoomRepository;
 import scheduler.room.RoomManager;
 import scheduler.room.RoomStatus;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+import static org.junit.Assert.*;
 /**
  * Testing AdminPanel without creating a new window.
  * Every test is done with a unique administrator id since

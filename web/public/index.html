@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- makes the layout fit phone screens instead of showing a zoomed-out desktop page -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room Booking System</title>
+  <meta name="description" content="Live demo of a campus room booking system: search, book, check in, pay, and manage rooms.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- app.js fills these three areas; the page is empty until it has asked the server who is signed in -->
+  <header id="masthead" class="masthead"></header>
+  <main id="app" class="page" aria-live="polite"></main>
+  <footer class="colophon">
+    <p>Java 21, SQLite and the JDK's built-in HTTP server. The browser talks to the same Facade the desktop app uses.</p>
+    <p><a href="https://github.com/omidfn84/room-booking-system">Source code and tests on GitHub</a></p>
+  </footer>
+  <!-- defer: run the script after the HTML above has been read -->
+  <script src="app.js" defer></script>
+</body>
+</html>

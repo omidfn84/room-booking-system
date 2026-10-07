@@ -1,0 +1,260 @@
+/* Room Booking System */
+
+:root {
+  --wall: #eef1f4;        /* page background */
+  --panel: #ffffff;       /* cards and forms */
+  --ink: #17212b;         /* main text */
+  --muted: #55626f;       /* secondary text */
+  --line: #cfd6dd;        /* borders */
+  --sign: #1b4b8a;        /* primary action colour (wayfinding blue) */
+  --sign-dark: #133a6d;
+  --free: #1a7a57;        /* available / success */
+  --busy: #a85f07;        /* in use / attention */
+  --stop: #ad3327;        /* closed / error */
+  --free-tint: #e3f3ec;
+  --busy-tint: #fbf0dd;
+  --stop-tint: #f9e6e3;
+  --sign-face: "DIN Alternate", "Bahnschrift", "Roboto Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body-face: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font: 16px/1.5 var(--body-face);
+}
+
+h1, h2, h3 { font-family: var(--sign-face); line-height: 1.15; margin: 0; letter-spacing: 0.01em; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 700; }
+h2 { font-size: 1.5rem; font-weight: 700; }
+h3 { font-size: 1.125rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--sign); }
+
+:focus-visible { outline: 3px solid #f2a900; outline-offset: 2px; }
+
+
+.masthead {
+  background: var(--sign);
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  min-height: 56px;
+}
+.masthead .brand { font: 700 1.25rem/1 var(--sign-face); letter-spacing: 0.02em; margin-right: auto; }
+.masthead .who { font-size: 0.9375rem; }
+.masthead .who strong { font-weight: 600; }
+
+/* ---------- layout ---------- */
+
+.page { max-width: 1120px; margin: 0 auto; padding: 28px 20px 48px; }
+.columns { display: grid; gap: 28px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) {
+  .columns { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; }
+}
+.stack > * + * { margin-top: 16px; }
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 14px; }
+.section-head p { color: var(--muted); font-size: 0.9375rem; }
+.results-head { margin-top: 24px; margin-bottom: 8px; }
+.results-head + .hint { margin-bottom: 12px; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px;
+}
+
+.colophon { max-width: 1120px; margin: 0 auto; padding: 0 20px 40px; color: var(--muted); font-size: 0.875rem; }
+.colophon p + p { margin-top: 4px; }
+
+/* ---------- welcome screen ---------- */
+
+.welcome { padding: 24px 0 8px; max-width: 60rem; }
+.welcome p.lead { margin-top: 14px; font-size: 1.125rem; color: var(--muted); max-width: 38rem; }
+
+.passes { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 28px; }
+
+/* a demo account is drawn like a door access card: coloured edge, role, rate */
+.pass {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 8px solid var(--sign);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.pass:hover { border-color: var(--sign); background: #f7fafd; }
+.pass .role { display: block; font: 700 1.375rem/1.1 var(--sign-face); }
+.pass .detail { display: block; margin-top: 6px; color: var(--muted); font-size: 0.9375rem; }
+.pass.admin { border-left-color: var(--ink); }
+
+/* first page: the two choices, side by side on a wide screen */
+.choices { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); margin-top: 28px; }
+@media (min-width: 860px) {
+  .choices { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+.choice > * + * { margin-top: 12px; }
+.choice.primary { border-top: 6px solid var(--sign); }
+.choice .passes { margin-top: 16px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+.register { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.howto { margin-top: 32px; max-width: 44rem; }
+.howto ol { margin: 10px 0 0; padding-left: 1.3rem; color: var(--muted); }
+.howto li + li { margin-top: 6px; }
+
+/* payment screen */
+.payment { max-width: 40rem; }
+.summary { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; align-items: baseline; }
+.summary dt { color: var(--muted); }
+.summary dd { margin: 0; font-weight: 600; }
+.summary dd.due { font: 700 1.75rem/1.1 var(--sign-face); }
+input[readonly] { background: #f1f4f7; color: var(--muted); }
+
+.facts { margin-top: 36px; }
+.facts ul { margin: 10px 0 0; padding-left: 1.1rem; color: var(--muted); max-width: 40rem; }
+.facts li + li { margin-top: 4px; }
+.facts .hint { margin-top: 14px; }
+
+/* ---------- forms ---------- */
+
+label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 4px; }
+input, select {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #9aa6b2;
+  border-radius: 4px;
+  padding: 8px 10px;
+  min-height: 40px;
+}
+.fields { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.hint { color: var(--muted); font-size: 0.875rem; }
+
+button { font: inherit; cursor: pointer; }
+.btn {
+  background: var(--sign);
+  color: #fff;
+  border: 1px solid var(--sign);
+  border-radius: 4px;
+  padding: 8px 14px;
+  min-height: 40px;
+  font-weight: 600;
+}
+.btn:hover { background: var(--sign-dark); }
+.btn.quiet { background: #fff; color: var(--sign); border-color: #9aa6b2; }
+.btn.quiet:hover { background: #f0f5fb; border-color: var(--sign); }
+.btn.danger { background: #fff; color: var(--stop); border-color: #d8a8a2; }
+.btn.danger:hover { background: var(--stop-tint); }
+.btn.small { min-height: 34px; padding: 5px 10px; font-size: 0.9375rem; }
+.btn.plain { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.6); }
+.btn.plain:hover { background: rgba(255, 255, 255, 0.14); }
+.btn:disabled { opacity: 0.55; cursor: default; }
+
+/* ---------- messages ---------- */
+
+.notice { border-radius: 4px; padding: 10px 12px; font-size: 0.9375rem; border: 1px solid transparent; }
+.notice.ok { background: var(--free-tint); border-color: #a9d8c4; color: #0f553b; }
+.notice.error { background: var(--stop-tint); border-color: #e3b4ae; color: #7d2118; }
+.notice.info { background: #e8eff8; border-color: #b9cce6; color: #173d70; }
+
+/* ---------- rooms: each one is a small door sign ---------- */
+
+.rooms { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.room {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 4px 14px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+.room .number { font: 700 1.75rem/1 var(--sign-face); min-width: 4.2rem; font-variant-numeric: tabular-nums; }
+.room .where { font-weight: 600; }
+.room .seats { color: var(--muted); font-size: 0.9375rem; }
+
+/* the door light */
+.light { display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 600; }
+.light::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: currentColor; }
+.light.AVAILABLE { color: var(--free); }
+.light.DISABLED, .light.OCCUPIED { color: var(--busy); }
+.light.MAINTENANCE { color: var(--stop); }
+
+/* ---------- bookings ---------- */
+
+.bookings { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.booking { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; }
+.booking .top { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.booking .number { font: 700 1.5rem/1 var(--sign-face); }
+.booking .when { font-weight: 600; }
+.booking .where, .booking .money { color: var(--muted); font-size: 0.9375rem; }
+.booking .money { margin-top: 8px; }
+.booking .actions { margin-top: 12px; }
+.booking form { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+
+/* The lifecycle rail: the booking's State drawn as stops on a line.
+   It is an ordered list because the stops really are a sequence. */
+.rail { list-style: none; display: flex; margin: 14px 0 0; padding: 0; }
+.rail li {
+  flex: 1;
+  position: relative;
+  padding-top: 20px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.rail li::before {              /* the line between stops */
+  content: "";
+  position: absolute; top: 6px; left: 0; right: 0;
+  height: 3px;
+  background: var(--line);
+}
+.rail li::after {               /* the stop marker */
+  content: "";
+  position: absolute; top: 0; left: 0;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--line);
+}
+.rail li:last-child { flex: 0 0 auto; }
+.rail li:last-child::before { display: none; }
+.rail li.done { color: var(--ink); }
+.rail li.done::after { background: var(--free); border-color: var(--free); }
+.rail li.done.through::before { background: var(--free); }   /* the line after a stop that has been passed */
+.rail li.now { color: var(--ink); font-weight: 700; }
+.rail li.now::after { background: var(--sign); border-color: var(--sign); box-shadow: 0 0 0 4px #d5e2f3; }
+.rail li.ended { color: var(--stop); font-weight: 700; }
+.rail li.ended::after { background: var(--stop); border-color: var(--stop); }
+.rail li.ended.kept { color: var(--busy); }
+.rail li.ended.kept::after { background: var(--busy); border-color: var(--busy); }
+.rail span { display: block; padding-right: 10px; }
+
+/* ---------- admin table ---------- */
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { font-size: 0.875rem; color: var(--muted); font-weight: 600; }
+td.id { font: 700 1.125rem/1 var(--sign-face); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+
+.empty { color: var(--muted); padding: 18px; border: 1px dashed #9aa6b2; border-radius: 6px; }
+.hidden { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rail li.now::after { transition: box-shadow 200ms ease-out; }
+}
