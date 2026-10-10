@@ -2,13 +2,18 @@
 
 [![CI](https://github.com/omidfn84/room-booking-system/actions/workflows/ci.yml/badge.svg)](https://github.com/omidfn84/room-booking-system/actions/workflows/ci.yml)
 
-A conference room booking system in Java with two front ends on one core: a Swing desktop app and a browser version with a JSON API. Data is stored in SQLite. It started as a 6-person team project for a software design course, and I've since extended it (SQLite migration, CI, web version). My own contributions are listed [below](#my-contributions).
+A conference room booking system in Java with two front ends on one core: a Swing desktop app and a browser version with a JSON API. Data is stored in SQLite.
 
 **6 design patterns** · **891 automated tests** · **Swing GUI and web version, SQLite, CI on every push**
 
 <!-- Once the web version is deployed, replace the address and uncomment:
 **Live demo:** https://YOUR-APP-ADDRESS (no sign-up needed: choose "Try the demo" on the first page)
 -->
+Live Demo:
+
+https://github.com/user-attachments/assets/8be49672-d691-475f-a59a-cfe73daa4e31
+
+
 
 ---
 
@@ -87,15 +92,6 @@ The coverage figures were measured against the production code as it was before 
 - The web tests start a real server on a free port and drive it over HTTP like a browser: the full book → check in → pay flow, one user trying to change another's booking, parallel requests for the same room, malformed input, and attempts to read files outside the public folder
 - See `test-ai/README.md` for how the AI-assisted suite was produced and checked
 
-## My contributions
-
-- **Swing GUI:** the login/register, booking, and admin panels, and the controllers connecting them to the Facade
-- **Persistence layer:** the repository adapters (originally CSV), then the migration to SQLite with a one-time import of existing CSV data
-- **CI:** the GitHub Actions workflow and `scripts/test.sh`, which runs the same build and test command locally and in CI
-- **AI-assisted tests** for the booking, room, facade, GUI, and panels packages, including the helper that drives modal `JOptionPane` dialogs
-- **Project structure and build setup**
-
-The rest of the system (the account hierarchy and factory, the booking and payment rules, the Facade) was built by teammates.
 
 ## Project structure
 
